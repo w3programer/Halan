@@ -1,12 +1,4 @@
-//
-//  GradientView.swift
-//
-//  Created by Mathieu Vandeginste on 06/12/2016.
-//  Copyright © 2018 Mathieu Vandeginste. All rights reserved.
-//
-
 import UIKit
-
 @IBDesignable class GradientView: UIView {
    
     private var gradientLayer: CAGradientLayer!
@@ -71,7 +63,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var cornerRadius: CGFloat = 0 {
+    @IBInspectable var  VcornerRadius: CGFloat = 0 {
         didSet {
             setNeedsLayout()
         }

@@ -1,35 +1,135 @@
-//
-//  RegistartionVC.swift
-//  Halan
-//
-//  Created by hesham tatawy on 18/09/1439 AH.
-//  Copyright © 1439 alatheertech. All rights reserved.
-//
-
 import UIKit
-
-class RegistartionVC: UIViewController {
-
+import Font_Awesome_Swift
+class RegistartionVC: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    var imagepicker:UIImagePickerController!
+    let genderArr = [NSLocalizedString("Mail", comment: ""),NSLocalizedString("Femail", comment: "")]
+    var pickerview = UIPickerView()
+    @IBOutlet var UserImage: UIImageView!
+    @IBOutlet var Name: UITextField!
+    @IBOutlet var Phone: UITextField!
+    @IBOutlet var email: UITextField!
+    @IBOutlet var Age: UITextField!
+    @IBOutlet var gender: UITextField!
+    @IBOutlet var username: UITextField!
+    @IBOutlet var password: UITextField!
+    @IBOutlet var repetPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        UserImage.image = UIImage(named: "user-avatar")
+        gender.inputView = pickerview
+        pickerview.dataSource = self
+        pickerview.delegate = self
+        imagepicker = UIImagePickerController()
+        imagepicker.allowsEditing = true
+        imagepicker.sourceType = .photoLibrary
+        imagepicker.delegate = self
+        textfiledimage()
     }
+    @IBAction func register(_ sender: UIButton) {
+        guard let name = Name.text,!name.isEmpty else {return}
+        guard let username = username.text,!username.isEmpty else{return}
+        guard let phone = Phone.text,!phone.isEmpty else{return}
+        guard let Email = email.text,!Email.isEmpty else{return}
+        guard let age = Age.text,!age.isEmpty else{return}
+        guard let gender = gender.text,!gender.isEmpty else{return}
+        guard let Password = password.text,!Password.isEmpty else{return}
+        guard let passwordrepeet = repetPassword.text,!passwordrepeet.isEmpty,passwordrepeet == Password   else{
+            let title:String = NSLocalizedString("report", comment: "")
+            let message:String = NSLocalizedString("can not match password ", comment: "")
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: .destructive, handler: nil))
+            self.present(alert,animated: true)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            return
+            
+        }
+        Api.registration(username:username ,password:Password ,email:Email,phone:phone,fullname:name,age:age,gender:gender,photo:UserImage.image!.encodeimage(format: ImageFormat.JPEG(0)),token:messageconfig.getDevicetoken(), completion: { (error:Error?, success :Bool) in
+            
+            
+            if success {
+                
+                let title:String = NSLocalizedString("message title", comment: "")
+                let message:String = NSLocalizedString("message body", comment: "")
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                self.present(alert,animated: true)
+                
+            }else{
+                let title:String = NSLocalizedString("loginmessagehead", comment: "")
+                let message:String = NSLocalizedString("connectionbody", comment: "")
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "ok", style: .destructive, handler: nil))
+                self.present(alert,animated: true)
+                
+            }
+        })
+   
+    }
+    
+    @IBAction func login(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "LoginSegue", sender: self)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func SelectImage(_ sender: UIButton) {
+     self.present(imagepicker, animated: true, completion: nil)
     }
-    */
+   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as?UIImage{
+            UserImage.image = image
+        }
+    
+    
+    if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+        UserImage.image = editedImage
+    } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        UserImage.image = originalImage
+    }
+        imagepicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func textfiledimage() {
+        Name.setLeftViewFAIcon(icon: .FAUserO, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
 
+        Phone.setLeftViewFAIcon(icon: .FAMobilePhone, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
+        email.setLeftViewFAIcon(icon: .FAEnvelope, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
+        Age.setLeftViewFAIcon(icon: .FAUserTimes, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
+        gender.setLeftViewFAIcon(icon: .FAMale, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
+        username.setLeftViewFAIcon(icon: .FAUserO, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
+        password.setLeftViewFAIcon(icon: .FALock, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
+        repetPassword.setLeftViewFAIcon(icon: .FALock, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
+
+        
+        
+    }
+    
+    
+    
 }
+/////////picker view
+extension RegistartionVC :UIPickerViewDelegate,UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+      return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 2
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return genderArr[row]
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        gender.text = genderArr[row]
+        gender.resignFirstResponder()
+    }
+    
+}
+
+
+
+
+
+
+
+

@@ -113,6 +113,19 @@ extension UIImage {
         
     }
 }
-
-
+import StoreKit
+extension AppDelegate{
+    class    func requestReview(){
+        if #available(iOS 10.3, *){
+            SKStoreReviewController.requestReview()
+            
+        }
+    }
+    
+    
+}
+//@IBAction func rateapp(sender :UIButton){
+//    let appdelegate = AppDelegate()
+//    appdelegate.requestReview()
+//}
 

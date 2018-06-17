@@ -37,7 +37,7 @@ extension JSON {
     var toImagePath: String? {
         guard let string = self.string, !string.isEmpty else { return nil }
         
-        return URLs.file_root + string
+        return Config.uploads + string
     }
     
 }

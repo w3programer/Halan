@@ -1,0 +1,75 @@
+
+/* Class = "UILabel"; text = "Register"; ObjectID = "2Mw-yl-5hx"; */
+"2Mw-yl-5hx.text" = "Register";
+
+/* Class = "UITextField"; placeholder = "Phone"; ObjectID = "4wc-Sf-IdH"; */
+"4wc-Sf-IdH.placeholder" = "Phone";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "5F8-VG-3gx"; */
+"5F8-VG-3gx.normalTitle" = "Logout";
+
+/* Class = "UIBarButtonItem"; title = "menu"; ObjectID = "Fsp-JR-bSA"; */
+"Fsp-JR-bSA.title" = "menu";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "GUH-FO-LFv"; */
+"GUH-FO-LFv.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Email Adress"; ObjectID = "Iv0-BA-XKI"; */
+"Iv0-BA-XKI.placeholder" = "Email Adress";
+
+/* Class = "UIButton"; normalTitle = "select photo"; ObjectID = "JH6-b5-c0U"; */
+"JH6-b5-c0U.normalTitle" = "select photo";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "KxG-QJ-YAt"; */
+"KxG-QJ-YAt.title" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Forget Password"; ObjectID = "Oa5-0h-LmO"; */
+"Oa5-0h-LmO.normalTitle" = "Forget Password";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Sap-9T-hKT"; */
+"Sap-9T-hKT.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Create new account"; ObjectID = "T0i-yp-MLt"; */
+"T0i-yp-MLt.normalTitle" = "Create new account";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "ULx-xW-Zgo"; */
+"ULx-xW-Zgo.placeholder" = "Name";
+
+/* Class = "UITextField"; placeholder = "Gender"; ObjectID = "Zm6-wt-FPD"; */
+"Zm6-wt-FPD.placeholder" = "Gender";
+
+/* Class = "UITextField"; placeholder = "Password Again"; ObjectID = "Znm-OU-ukS"; */
+"Znm-OU-ukS.placeholder" = "Password Again";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "bm8-1d-H53"; */
+"bm8-1d-H53.normalTitle" = "Register";
+
+/* Class = "UIButton"; normalTitle = "LogIn"; ObjectID = "dGP-B4-bQQ"; */
+"dGP-B4-bQQ.normalTitle" = "LogIn";
+
+/* Class = "UITextField"; placeholder = "UserName"; ObjectID = "gZd-Xk-za0"; */
+"gZd-Xk-za0.placeholder" = "UserName";
+
+/* Class = "UIButton"; normalTitle = "Hesham"; ObjectID = "kdD-Jj-RbZ"; */
+"kdD-Jj-RbZ.normalTitle" = "Hesham";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "ndJ-qF-oF4"; */
+"ndJ-qF-oF4.title" = "Home";
+
+/* Class = "UITextField"; placeholder = "Age"; ObjectID = "pPu-uZ-tjj"; */
+"pPu-uZ-tjj.placeholder" = "Age";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "qM2-Ie-3nR"; */
+"qM2-Ie-3nR.normalTitle" = "Log In";
+
+/* Class = "UIButton"; normalTitle = "Home"; ObjectID = "rU2-So-bp4"; */
+"rU2-So-bp4.normalTitle" = "Home";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "rtd-1k-M3X"; */
+"rtd-1k-M3X.text" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Register Driver          "; ObjectID = "szk-8z-LaG"; */
+"szk-8z-LaG.normalTitle" = "Register Driver          ";
+
+/* Class = "UITextField"; placeholder = "User Name"; ObjectID = "yUw-2Y-C9D"; */
+"yUw-2Y-C9D.placeholder" = "User Name";

@@ -1,5 +1,5 @@
 import Foundation
-struct setting {
+struct Config {
     static let main = "http://fekraapp.semicolonsoft.com/hala/"
     static let registration = main + "Api/ClientRegistration/"
     static let login = main + "Api/Login/"

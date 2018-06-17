@@ -36,10 +36,10 @@ class Helper: NSObject {
         return (def.object(forKey: "user_id") as! Int)
     }
 
-    
     class func logout(){
         let def = UserDefaults.standard
         def.removeObject(forKey: "user_email")
+        restartApp()
 
     }
 }

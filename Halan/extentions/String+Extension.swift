@@ -7,11 +7,9 @@
 //
 
 import Foundation
-
-
 extension String {
     
-    var trimmed: String {
+    var trim: String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
