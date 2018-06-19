@@ -85,13 +85,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		540DA04020D01F4D004571E7 /* SlideMenu */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SlideMenu;
-			sourceTree = "<group>";
-		};
 		5416AE0020C33D9D00DCE6E6 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +164,6 @@
 		5456E23F20AE5BF200A43A19 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				540DA04020D01F4D004571E7 /* SlideMenu */,
 				5459AADB20CC25C0003724D4 /* Home */,
 				54B0900820C210CE0003813C /* User */,
 				5456E22A20AE492C00A43A19 /* AppDelegate.swift */,
