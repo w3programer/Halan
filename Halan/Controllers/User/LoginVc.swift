@@ -45,6 +45,10 @@ class LoginVC: UIViewController {
 
    self.performSegue(withIdentifier: "RegistrationSegue", sender: self)
     }
+    @IBAction func reseetpassword(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "ForgetSegue", sender: self)
+    }
     
 }
 

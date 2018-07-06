@@ -5,6 +5,7 @@ struct Config {
     static let login = main + "Api/Login/"
     //Logout
     static let Logout = main + "Api/Logout/"
+    static let ResetePassword = main + "Api/RestMyPass/"
     //profile
     static let profile = main + "Api/ClientProfile/"
     //convert user to driver
@@ -29,6 +30,12 @@ struct Config {
     static let DriverAction = main + "Api/DriverAction/"
     //ShowMyRequests
     static let ShowMyRequests = main + "Api/ShowMyRequests/"
+    //contactus
+    static let Contactus = main + "Api/ContactUs/"
+    static let AboutApp = main + "Api/AboutApp/"
+    static let Privacypolicy = main + "Api/PolicyApp/"
+    static let Rules = main + "Api/TermsAndConditions/"
+    static let bankAccounts = main + "Api/BankAccounts/"
     //uploads path
     static let uploads = main + "uploads/images/"
     

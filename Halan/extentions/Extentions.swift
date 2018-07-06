@@ -115,17 +115,13 @@ extension UIImage {
 }
 import StoreKit
 extension AppDelegate{
-    class    func requestReview(){
-        if #available(iOS 10.3, *){
-            SKStoreReviewController.requestReview()
-            
-        }
-    }
-    
-    
-}
-//@IBAction func rateapp(sender :UIButton){
-//    let appdelegate = AppDelegate()
-//    appdelegate.requestReview()
-//}
+        class func rateApp(){
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+            } else {guard let url = URL(string: "itms-apps://itunes.apple.com/us/app/halan/id1364446659?mt=8&action=write-review") else {return}
+                
+                UIApplication.shared.openURL(url)
 
+            }  
+    }
+}

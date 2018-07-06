@@ -10,7 +10,11 @@ class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocom
     @IBOutlet var NavmenuLeading: NSLayoutConstraint!
     @IBOutlet var NavView: UIView!
     @IBOutlet var menuButton: UIBarButtonItem!
-    @IBOutlet var Muteslider: UISlider!
+
+    
+    @IBOutlet var MuteSwich: UISwitch!
+    
+    
     @IBOutlet var ProfileImage: UIImageView!
     @IBOutlet var ProfileName: UIButton!
     var ordertitle:UITextField?
@@ -38,14 +42,16 @@ class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocom
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        NavmenuLeading.constant = -300
+        //self.navigationController?.tabBarItem.badgeValue = "6"
+       // self.navigationController?.tabBarItem.badgeColor = .red
+        let userdata =  Helper.getdata()
+        let urlString = Config.uploads+userdata["user_photo"]!
+        let url = URL(string: urlString )
+        ProfileImage.downloadedFrom(url: url!)
+        ProfileName.setTitle(userdata["user_name"], for: .normal)
+        
+        NavmenuLeading.constant =  -300
         OrderButtomConstrain.constant = 200
-        Muteslider.setFAMinimumValueImage(icon: .FABellSlashO)
-        Muteslider.setFAMaximumValueImage(icon: .FABellO)
-        Muteslider.minimumValue = 0.0
-        Muteslider.maximumValue = 1.0
-        Muteslider.setValue(1.0, animated: true)
-
          self.menuButton.setFAIcon(icon: .FANavicon, iconSize: 35)
        
         self.destinationmarker.map = nil
@@ -408,24 +414,22 @@ class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocom
             }
         }
     }
-    var isslidon = true
-    @IBAction func Mute(_ sender: UISlider) {
-        if isslidon == true {
-            Muteslider.setValue(0.0, animated: true)
-            print(Muteslider.value)
-            isslidon = false
+    @IBAction func MuteAction(_ sender: UISwitch) {
+        if MuteSwich.isOn {
 
-        }else {
-            Muteslider.setValue(1.0, animated: true)
-            print(Muteslider.value)
-            isslidon = true
+
+print("on")
+        }else{
+            print("off")
 
         }
-        
     }
     
+    
+
+    
     @IBAction func Profile(_ sender: UIButton) {
-        
+        self.performSegue(withIdentifier: "ProfileSegue", sender: self)
     }
     
     @IBAction func registDriver(_ sender: UIButton) {

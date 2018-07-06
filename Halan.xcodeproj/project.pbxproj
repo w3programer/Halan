@@ -7,17 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54095A8220EFCFC600C83A72 /* NotifactionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54095A8120EFCFC600C83A72 /* NotifactionsVC.swift */; };
+		54095A8420EFCFFB00C83A72 /* NotiViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54095A8320EFCFFB00C83A72 /* NotiViewCell.swift */; };
+		54095A8620EFE40200C83A72 /* Api+Notifaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54095A8520EFE40200C83A72 /* Api+Notifaction.swift */; };
+		54095A8820EFE46100C83A72 /* Notifactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54095A8720EFE46100C83A72 /* Notifactions.swift */; };
 		5416ADFF20C3296B00DCE6E6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5416ADFE20C3296B00DCE6E6 /* Config.swift */; };
 		5416AE0220C33DE000DCE6E6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5416AE0120C33DE000DCE6E6 /* Helper.swift */; };
 		5416AE0420C36D3000DCE6E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5416AE0320C36D2F00DCE6E6 /* GoogleService-Info.plist */; };
+		54428E4120EEAFF200E378A6 /* BankAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54428E4020EEAFF200E378A6 /* BankAccountCell.swift */; };
 		5456E22B20AE492C00A43A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456E22A20AE492C00A43A19 /* AppDelegate.swift */; };
 		5456E22D20AE492C00A43A19 /* LoginVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456E22C20AE492C00A43A19 /* LoginVc.swift */; };
 		5456E23020AE492C00A43A19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5456E22E20AE492C00A43A19 /* Main.storyboard */; };
 		5456E23220AE493D00A43A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5456E23120AE493D00A43A19 /* Assets.xcassets */; };
 		5456E23520AE493D00A43A19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5456E23320AE493D00A43A19 /* LaunchScreen.storyboard */; };
+		54663DA620DD7AA800BCCA47 /* ForgetPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54663DA520DD7AA800BCCA47 /* ForgetPassVC.swift */; };
 		54664F0D20AF0E3D0086C939 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54664F0C20AF0E3D0086C939 /* Extentions.swift */; };
 		547FF00F20B0BFAE002EF1C6 /* Api+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547FF00E20B0BFAE002EF1C6 /* Api+Login.swift */; };
 		547FF01120B0C0BD002EF1C6 /* Api+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547FF01020B0C0BD002EF1C6 /* Api+Registration.swift */; };
+		5489741B20EE24CA006EF1E8 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489741A20EE24CA006EF1E8 /* MoreVC.swift */; };
+		5489741D20EE3491006EF1E8 /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489741C20EE3491006EF1E8 /* WebViewVC.swift */; };
+		548B4D1020E8F26300839347 /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548B4D0F20E8F26300839347 /* ContactUs.swift */; };
+		548B4D1220E8F5C800839347 /* Api+contactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548B4D1120E8F5C800839347 /* Api+contactUs.swift */; };
+		548B4D1420E904BB00839347 /* PrivacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548B4D1320E904BB00839347 /* PrivacyVC.swift */; };
+		548B4D1620E9075C00839347 /* Api+BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548B4D1520E9075C00839347 /* Api+BankAccount.swift */; };
+		548B4D1820E90E4200839347 /* BankAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548B4D1720E90E4200839347 /* BankAccounts.swift */; };
 		548DE19520C4211D00651253 /* Firebase+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548DE19420C4211D00651253 /* Firebase+Extention.swift */; };
 		54A1C77820D67535004011A3 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A1C77720D67535004011A3 /* PopUpViewController.swift */; };
 		54A1C77A20D68EE7004011A3 /* actionCheet+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A1C77920D68EE6004011A3 /* actionCheet+extention.swift */; };
@@ -31,6 +44,11 @@
 		54C2F5FE20CD555C00815F36 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2F5FD20CD555C00815F36 /* HomeVC.swift */; };
 		54C2F60020CD6EAD00815F36 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2F5FF20CD6EAC00815F36 /* SearchResultsController.swift */; };
 		54D3042D20C5839300C9B622 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D3042C20C5839300C9B622 /* AudioToolbox.framework */; };
+		54E772EA20E11CBE00E7E8A6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E772E920E11CBE00E7E8A6 /* Profile.swift */; };
+		54E772EC20E126E200E7E8A6 /* Api+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E772EB20E126E200E7E8A6 /* Api+Profile.swift */; };
+		54E772EE20E1270B00E7E8A6 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E772ED20E1270B00E7E8A6 /* ProfileData.swift */; };
+		54EAB5A120D9766B00C25DC1 /* Api+Addorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAB5A020D9766B00C25DC1 /* Api+Addorder.swift */; };
+		54EB127020E7A6A2005B2EB7 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB126F20E7A6A2005B2EB7 /* MeVC.swift */; };
 		54F15F7420C01A7A000640D6 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F15F7320C01A7A000640D6 /* Style.swift */; };
 		54F847AA20C9CB2100F29F92 /* TextFiled+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F847A920C9CB2100F29F92 /* TextFiled+extention.swift */; };
 		610CC967905CAE312FAC79AD /* Pods_Halan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A6483A9C6432CA3019638C /* Pods_Halan.framework */; };
@@ -38,10 +56,15 @@
 
 /* Begin PBXFileReference section */
 		1B81AED6057CE34240BA7757 /* Pods-Halan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Halan/Pods-Halan.release.xcconfig"; sourceTree = "<group>"; };
+		54095A8120EFCFC600C83A72 /* NotifactionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifactionsVC.swift; sourceTree = "<group>"; };
+		54095A8320EFCFFB00C83A72 /* NotiViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiViewCell.swift; sourceTree = "<group>"; };
+		54095A8520EFE40200C83A72 /* Api+Notifaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Notifaction.swift"; sourceTree = "<group>"; };
+		54095A8720EFE46100C83A72 /* Notifactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifactions.swift; sourceTree = "<group>"; };
 		5416ADFE20C3296B00DCE6E6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		5416AE0120C33DE000DCE6E6 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		5416AE0320C36D2F00DCE6E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5416AE0520C370DD00DCE6E6 /* Halan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Halan.entitlements; sourceTree = "<group>"; };
+		54428E4020EEAFF200E378A6 /* BankAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountCell.swift; sourceTree = "<group>"; };
 		5456E22720AE492C00A43A19 /* Halan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Halan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5456E22A20AE492C00A43A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5456E22C20AE492C00A43A19 /* LoginVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVc.swift; sourceTree = "<group>"; };
@@ -50,9 +73,17 @@
 		5456E23420AE493D00A43A19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5456E23620AE493D00A43A19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		545CE8F820D5539300488F85 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		54663DA520DD7AA800BCCA47 /* ForgetPassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassVC.swift; sourceTree = "<group>"; };
 		54664F0C20AF0E3D0086C939 /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		547FF00E20B0BFAE002EF1C6 /* Api+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Login.swift"; sourceTree = "<group>"; };
 		547FF01020B0C0BD002EF1C6 /* Api+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Registration.swift"; sourceTree = "<group>"; };
+		5489741A20EE24CA006EF1E8 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
+		5489741C20EE3491006EF1E8 /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
+		548B4D0F20E8F26300839347 /* ContactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
+		548B4D1120E8F5C800839347 /* Api+contactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+contactUs.swift"; sourceTree = "<group>"; };
+		548B4D1320E904BB00839347 /* PrivacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyVC.swift; sourceTree = "<group>"; };
+		548B4D1520E9075C00839347 /* Api+BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+BankAccount.swift"; sourceTree = "<group>"; };
+		548B4D1720E90E4200839347 /* BankAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccounts.swift; sourceTree = "<group>"; };
 		548DE19420C4211D00651253 /* Firebase+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Extention.swift"; sourceTree = "<group>"; };
 		54A1C77720D67535004011A3 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		54A1C77920D68EE6004011A3 /* actionCheet+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "actionCheet+extention.swift"; sourceTree = "<group>"; };
@@ -66,6 +97,11 @@
 		54C2F5FD20CD555C00815F36 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		54C2F5FF20CD6EAC00815F36 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		54D3042C20C5839300C9B622 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		54E772E920E11CBE00E7E8A6 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		54E772EB20E126E200E7E8A6 /* Api+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Profile.swift"; sourceTree = "<group>"; };
+		54E772ED20E1270B00E7E8A6 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
+		54EAB5A020D9766B00C25DC1 /* Api+Addorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Addorder.swift"; sourceTree = "<group>"; };
+		54EB126F20E7A6A2005B2EB7 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		54F15F7320C01A7A000640D6 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		54F847A920C9CB2100F29F92 /* TextFiled+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFiled+extention.swift"; sourceTree = "<group>"; };
 		72AF262CDA2B9812992F4696 /* Pods-Halan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Halan/Pods-Halan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54095A8020EFCF9100C83A72 /* Notifactions */ = {
+			isa = PBXGroup;
+			children = (
+				54095A8120EFCFC600C83A72 /* NotifactionsVC.swift */,
+				54095A8320EFCFFB00C83A72 /* NotiViewCell.swift */,
+			);
+			path = Notifactions;
+			sourceTree = "<group>";
+		};
 		5416AE0020C33D9D00DCE6E6 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				54B0C52920CF5D04001EDDA9 /* Directions.swift */,
+				54E772ED20E1270B00E7E8A6 /* ProfileData.swift */,
+				548B4D1720E90E4200839347 /* BankAccounts.swift */,
+				54095A8720EFE46100C83A72 /* Notifactions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,6 +212,9 @@
 		5456E23F20AE5BF200A43A19 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				54095A8020EFCF9100C83A72 /* Notifactions */,
+				5489741920EE249D006EF1E8 /* other */,
+				548B4D0E20E8EC9D00839347 /* Me */,
 				5459AADB20CC25C0003724D4 /* Home */,
 				54B0900820C210CE0003813C /* User */,
 				5456E22A20AE492C00A43A19 /* AppDelegate.swift */,
@@ -196,8 +247,33 @@
 				547FF00E20B0BFAE002EF1C6 /* Api+Login.swift */,
 				547FF01020B0C0BD002EF1C6 /* Api+Registration.swift */,
 				54B0C52B20CF5E97001EDDA9 /* Api+direction.swift */,
+				54EAB5A020D9766B00C25DC1 /* Api+Addorder.swift */,
+				54E772EB20E126E200E7E8A6 /* Api+Profile.swift */,
+				548B4D1120E8F5C800839347 /* Api+contactUs.swift */,
+				548B4D1520E9075C00839347 /* Api+BankAccount.swift */,
+				54095A8520EFE40200C83A72 /* Api+Notifaction.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		5489741920EE249D006EF1E8 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				5489741A20EE24CA006EF1E8 /* MoreVC.swift */,
+				5489741C20EE3491006EF1E8 /* WebViewVC.swift */,
+				54428E4020EEAFF200E378A6 /* BankAccountCell.swift */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		548B4D0E20E8EC9D00839347 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				54EB126F20E7A6A2005B2EB7 /* MeVC.swift */,
+				548B4D0F20E8F26300839347 /* ContactUs.swift */,
+				548B4D1320E904BB00839347 /* PrivacyVC.swift */,
+			);
+			path = Me;
 			sourceTree = "<group>";
 		};
 		54B0900820C210CE0003813C /* User */ = {
@@ -205,6 +281,8 @@
 			children = (
 				5456E22C20AE492C00A43A19 /* LoginVc.swift */,
 				54B0900920C214CB0003813C /* RegistartionVC.swift */,
+				54663DA520DD7AA800BCCA47 /* ForgetPassVC.swift */,
+				54E772E920E11CBE00E7E8A6 /* Profile.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -264,6 +342,9 @@
 						CreatedOnToolsVersion = 9.3.1;
 						LastSwiftMigration = 0940;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -396,26 +477,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				547FF01120B0C0BD002EF1C6 /* Api+Registration.swift in Sources */,
+				54E772EA20E11CBE00E7E8A6 /* Profile.swift in Sources */,
 				54A1C77820D67535004011A3 /* PopUpViewController.swift in Sources */,
+				54E772EE20E1270B00E7E8A6 /* ProfileData.swift in Sources */,
+				54EB127020E7A6A2005B2EB7 /* MeVC.swift in Sources */,
 				54F15F7420C01A7A000640D6 /* Style.swift in Sources */,
+				548B4D1620E9075C00839347 /* Api+BankAccount.swift in Sources */,
 				5416ADFF20C3296B00DCE6E6 /* Config.swift in Sources */,
+				5489741D20EE3491006EF1E8 /* WebViewVC.swift in Sources */,
+				54428E4120EEAFF200E378A6 /* BankAccountCell.swift in Sources */,
 				548DE19520C4211D00651253 /* Firebase+Extention.swift in Sources */,
 				547FF00F20B0BFAE002EF1C6 /* Api+Login.swift in Sources */,
 				54B0900A20C214CB0003813C /* RegistartionVC.swift in Sources */,
 				54BC2FD120CAC89900B495D5 /* String+Extension.swift in Sources */,
 				54B0C52A20CF5D04001EDDA9 /* Directions.swift in Sources */,
+				54EAB5A120D9766B00C25DC1 /* Api+Addorder.swift in Sources */,
+				54663DA620DD7AA800BCCA47 /* ForgetPassVC.swift in Sources */,
 				54F847AA20C9CB2100F29F92 /* TextFiled+extention.swift in Sources */,
+				54095A8420EFCFFB00C83A72 /* NotiViewCell.swift in Sources */,
+				548B4D1820E90E4200839347 /* BankAccounts.swift in Sources */,
 				5456E22D20AE492C00A43A19 /* LoginVc.swift in Sources */,
 				54C2F60020CD6EAD00815F36 /* SearchResultsController.swift in Sources */,
 				54C2F5FE20CD555C00815F36 /* HomeVC.swift in Sources */,
+				548B4D1020E8F26300839347 /* ContactUs.swift in Sources */,
 				54A1C77A20D68EE7004011A3 /* actionCheet+extention.swift in Sources */,
 				54BC2FD220CAC89900B495D5 /* Bool+Extension.swift in Sources */,
+				54095A8220EFCFC600C83A72 /* NotifactionsVC.swift in Sources */,
 				54B3C1FE20C188C100EC8428 /* GradientView.swift in Sources */,
 				54B0C52C20CF5E97001EDDA9 /* Api+direction.swift in Sources */,
+				5489741B20EE24CA006EF1E8 /* MoreVC.swift in Sources */,
 				5416AE0220C33DE000DCE6E6 /* Helper.swift in Sources */,
+				54095A8620EFE40200C83A72 /* Api+Notifaction.swift in Sources */,
 				5456E22B20AE492C00A43A19 /* AppDelegate.swift in Sources */,
 				54BC2FD320CAC89900B495D5 /* JSON+Extension.swift in Sources */,
+				548B4D1420E904BB00839347 /* PrivacyVC.swift in Sources */,
+				548B4D1220E8F5C800839347 /* Api+contactUs.swift in Sources */,
 				54664F0D20AF0E3D0086C939 /* Extentions.swift in Sources */,
+				54095A8820EFE46100C83A72 /* Notifactions.swift in Sources */,
+				54E772EC20E126E200E7E8A6 /* Api+Profile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
