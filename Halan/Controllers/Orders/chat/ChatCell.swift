@@ -1,16 +1,6 @@
-
 import UIKit
+class ChatCell: UITableViewCell {
 
-class NotiViewCell: UITableViewCell {
-
-    @IBOutlet var cost: UILabel!
-    
-    @IBOutlet var Topoint: UILabel!
-    @IBOutlet var Dateadd: UILabel!
-    
-    
-    @IBOutlet var FromPoint: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -18,22 +18,21 @@ extension Api {
                     completion(error , false)
                 case .success(let value):
                     let data = JSON(value)
-                    if (data["success"].string != "0") {
-                        ///////
+                    if (data["success"].int == 1) {
                         let user_id = Int(data["user_id"].string!)!
                         let user_name = data["user_name"].string
                         let user_phone = Int(data["user_phone"].string!)
                         let user_email = data["user_email"].string
                         let user_photo = data["user_photo"].string
-
-                        /////////
+                        let user_type = data["user_type"].string
                         let param = [
                             "user_token_id":messageconfig.getDevicetoken(),
-                        ]
-                        Alamofire.request(Config.UpdateTokenId+String(user_id), method: .post, parameters:
+                            ]
+                        Alamofire.request(Config.UpdateTokenId+data["user_id"].string!, method: .post, parameters:
                             param, encoding: URLEncoding.default, headers: nil)
-                        
-                        Helper.setUserData(user_id: user_id, user_email: user_email!, user_name: user_name!, user_phone: user_phone!,user_photo: user_photo!)
+
+                        Helper.setUserData(user_id: user_id, user_email: user_email!, user_name: user_name!, user_phone: user_phone!,user_photo: user_photo!,user_type:user_type!)
+
                         completion(nil ,true)
                     }
                     

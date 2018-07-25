@@ -3,7 +3,6 @@ import Font_Awesome_Swift
 class LoginVC: UIViewController {
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
-
     override func viewDidLoad() {
         super.viewDidLoad()
      //AppDelegate.requestReview()

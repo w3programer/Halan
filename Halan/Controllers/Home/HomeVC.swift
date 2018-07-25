@@ -11,7 +11,6 @@ class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocom
     @IBOutlet var NavView: UIView!
     @IBOutlet var menuButton: UIBarButtonItem!
 
-    
     @IBOutlet var MuteSwich: UISwitch!
     
     
@@ -42,6 +41,7 @@ class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocom
     override func viewDidLoad() {
         
         super.viewDidLoad()
+       // print(Helper.getuserid())
         //self.navigationController?.tabBarItem.badgeValue = "6"
        // self.navigationController?.tabBarItem.badgeColor = .red
         let userdata =  Helper.getdata()
@@ -321,23 +321,10 @@ class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocom
         }
         gmsFetcher?.sourceTextHasChanged(searchText)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
    //////slide menu
     var isnaveopen = true
     @IBAction func NavigationButton(_ sender: UIBarButtonItem) {
-        
         if isnaveopen {
          isnaveopen =  false
             self.menuButton.setFAIcon(icon: .FAClose, iconSize: 35)
@@ -353,8 +340,6 @@ class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocom
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         })
-
-        
     }
 
     @IBAction func gesturerec(_ sender: UIPanGestureRecognizer) {
@@ -425,23 +410,34 @@ print("on")
         }
     }
     
-    
-
-    
     @IBAction func Profile(_ sender: UIButton) {
         self.performSegue(withIdentifier: "ProfileSegue", sender: self)
     }
     
     @IBAction func registDriver(_ sender: UIButton) {
-        
+        if  Helper.isDriver() == false{
+            self.performSegue(withIdentifier: "DriverSegue", sender: self)
+        }
+
     }
     
     @IBAction func LogOut(_ sender: UIButton) {
       Helper.logout()
 
     }
-    
- 
+    //    var urlstr = ""
+   // var titlestr = ""
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "DriverSegue" {
+            let destinationVC = segue.destination as! WebViewVC
+            destinationVC.urlstr = Config.main
+             destinationVC.titlestr = NSLocalizedString("Driver Registeration", comment: " driver registration")
+        }
+        
+        
+    }
     
 }
 

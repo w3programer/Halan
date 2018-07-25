@@ -2,7 +2,7 @@
 import UIKit
 import WebKit
 class WebViewVC: UIViewController {
-var urlstr = ""
+    var urlstr = ""
     var titlestr = ""
     @IBOutlet var NaveTitle: UINavigationItem!
     @IBOutlet var WebView: WKWebView!

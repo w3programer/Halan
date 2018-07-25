@@ -11,8 +11,6 @@ class ForgetPassVC: UIViewController {
     }
 
     @IBAction func Reset(_ sender: UIButton) {
-    
-       
         Api.ReseetPassword(username: userName.text!, email: Email.text!) { (error:Error?, success :Bool) in
             if success {
                 let title:String = NSLocalizedString("report", comment: "")

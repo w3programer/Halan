@@ -1,6 +1,6 @@
 import Foundation
 struct Config {
-    static let main = "http://fekraapp.semicolonsoft.com/hala/"
+    static let main = "http://halan.net/"
     static let registration = main + "Api/ClientRegistration/"
     static let login = main + "Api/Login/"
     //Logout
@@ -10,8 +10,8 @@ struct Config {
     static let profile = main + "Api/ClientProfile/"
     //convert user to driver
     static let DriverRegistration = main + "Api/DriverRegistration/"
-    //UpdateLocation
-    static let UpdateLocation = main + "Api/UpdateLocation/"
+    //UpdateLocation for driver
+    static let updateDriverLocation = main + "Api/UpdateLocation/\(Helper.getuserid)"
     //update token id
     static let UpdateTokenId = main + "Api/UpdateTokenId/"
     ///UpdateClient
@@ -22,14 +22,25 @@ struct Config {
     static let ShowDrivers = main + "Api/ShowDrivers/"
     //DestanceCost
     static let DestanceCost = main + "Api/DestanceCost/"
-    //AddMyOrder
+    //addMyOrder
     static let AddMyOrder = main + "Api/AddMyOrder/"
+    //driver orders
+    static let viewdriverOrder = main + "Api/ViewDriverOrders/"
+    static let driverCancelOrder = main + "Api/DriverCancelOrder/\(Helper.getuserid())"
+    static let orderDelivered = main + "Api/OrderDelivered/"
+    //client orders
+    static let viewClientOrder = main + "Api/ViewClientOrders/"
+    
     //ReceivedRequests
     static let ReceivedRequests = main + "Api/ReceivedRequests/"
     //DriverAction
     static let DriverAction = main + "Api/DriverAction/"
     //ShowMyRequests
-    static let ShowMyRequests = main + "Api/ShowMyRequests/"
+    static let ClientRequests = main + "Api/ShowMyRequests/\(Helper.getuserid())"
+    static let driverRequests = main + "Api/ReceivedRequests/\(Helper.getuserid())"
+    //orders
+    static let clientCancerOrder = main + "Api/ClientCancelOrder/\(Helper.getuserid())"
+
     //contactus
     static let Contactus = main + "Api/ContactUs/"
     static let AboutApp = main + "Api/AboutApp/"

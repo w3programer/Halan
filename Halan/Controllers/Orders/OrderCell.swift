@@ -1,16 +1,10 @@
-
 import UIKit
-
-class NotiViewCell: UITableViewCell {
+class OrderCell: UITableViewCell {
+    @IBOutlet var client_location: UILabel!
+    @IBOutlet var market_location: UILabel!
 
     @IBOutlet var cost: UILabel!
-    
-    @IBOutlet var Topoint: UILabel!
-    @IBOutlet var Dateadd: UILabel!
-    
-    
-    @IBOutlet var FromPoint: UILabel!
-    
+    @IBOutlet var orderDate: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

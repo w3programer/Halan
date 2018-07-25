@@ -6,27 +6,44 @@ class Helper: NSObject {
         var vc:UIViewController
         if getUserData() {
             vc = storyboard.instantiateViewController(withIdentifier: "Home")
-
         }else{
-            
             vc = (storyboard.instantiateInitialViewController())!
-
         }
         window.rootViewController = vc
         UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
     }
     
-    class func setUserData(user_id : Int,user_email:String,user_name:String,user_phone:Int,user_photo:String){
+    
+
+    
+    class func setUserData(user_id : Int,user_email:String,user_name:String,user_phone:Int,user_photo:String,user_type:String){
         let def = UserDefaults.standard
         def.setValue(user_id, forKey: "user_id")
+        def.setValue(user_type, forKey: "user_type")
         def.setValue(user_email, forKey: "user_email")
         def.setValue(user_name, forKey: "user_name")
         def.setValue(user_phone, forKey: "user_phone")
         def.setValue(user_photo, forKey: "user_photo")
-
         def.synchronize()
         restartApp()
+    }
+    class func getUserType()->String{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "user_type") as? String)!
         
+    }
+    class func isDriver()->Bool{
+        let def = UserDefaults.standard
+        if def.object(forKey: "user_type") != nil{
+            let userType = (def.object(forKey: "user_type")as! NSString).integerValue
+            if ( userType == 1){
+                return true
+            }else{
+                return false
+            }
+
+        }
+        return false
     }
     class func getUserData()->Bool{
         let def = UserDefaults.standard

@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5406DADB20F5FEFD0065E5F7 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5406DADA20F5FEFD0065E5F7 /* OrderCell.swift */; };
+		5406DADD20F628820065E5F7 /* CurentOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5406DADC20F628810065E5F7 /* CurentOrder.swift */; };
+		5406DADF20F62E1B0065E5F7 /* OrderDetailesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5406DADE20F62E1B0065E5F7 /* OrderDetailesVC.swift */; };
 		54095A8220EFCFC600C83A72 /* NotifactionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54095A8120EFCFC600C83A72 /* NotifactionsVC.swift */; };
 		54095A8420EFCFFB00C83A72 /* NotiViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54095A8320EFCFFB00C83A72 /* NotiViewCell.swift */; };
 		54095A8620EFE40200C83A72 /* Api+Notifaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54095A8520EFE40200C83A72 /* Api+Notifaction.swift */; };
 		54095A8820EFE46100C83A72 /* Notifactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54095A8720EFE46100C83A72 /* Notifactions.swift */; };
+		54095A8A20F00B2F00C83A72 /* NotifactionsDetailes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54095A8920F00B2F00C83A72 /* NotifactionsDetailes.swift */; };
 		5416ADFF20C3296B00DCE6E6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5416ADFE20C3296B00DCE6E6 /* Config.swift */; };
 		5416AE0220C33DE000DCE6E6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5416AE0120C33DE000DCE6E6 /* Helper.swift */; };
-		5416AE0420C36D3000DCE6E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5416AE0320C36D2F00DCE6E6 /* GoogleService-Info.plist */; };
 		54428E4120EEAFF200E378A6 /* BankAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54428E4020EEAFF200E378A6 /* BankAccountCell.swift */; };
 		5456E22B20AE492C00A43A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456E22A20AE492C00A43A19 /* AppDelegate.swift */; };
 		5456E22D20AE492C00A43A19 /* LoginVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456E22C20AE492C00A43A19 /* LoginVc.swift */; };
@@ -32,6 +35,8 @@
 		548B4D1620E9075C00839347 /* Api+BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548B4D1520E9075C00839347 /* Api+BankAccount.swift */; };
 		548B4D1820E90E4200839347 /* BankAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548B4D1720E90E4200839347 /* BankAccounts.swift */; };
 		548DE19520C4211D00651253 /* Firebase+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548DE19420C4211D00651253 /* Firebase+Extention.swift */; };
+		548ED4CC20FE321A00FAF500 /* ordersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548ED4CB20FE321A00FAF500 /* ordersModel.swift */; };
+		5494A46121069AA900AB0DE8 /* Api+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5494A46021069AA900AB0DE8 /* Api+Driver.swift */; };
 		54A1C77820D67535004011A3 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A1C77720D67535004011A3 /* PopUpViewController.swift */; };
 		54A1C77A20D68EE7004011A3 /* actionCheet+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A1C77920D68EE6004011A3 /* actionCheet+extention.swift */; };
 		54B0900A20C214CB0003813C /* RegistartionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0900920C214CB0003813C /* RegistartionVC.swift */; };
@@ -47,22 +52,43 @@
 		54E772EA20E11CBE00E7E8A6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E772E920E11CBE00E7E8A6 /* Profile.swift */; };
 		54E772EC20E126E200E7E8A6 /* Api+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E772EB20E126E200E7E8A6 /* Api+Profile.swift */; };
 		54E772EE20E1270B00E7E8A6 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E772ED20E1270B00E7E8A6 /* ProfileData.swift */; };
-		54EAB5A120D9766B00C25DC1 /* Api+Addorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAB5A020D9766B00C25DC1 /* Api+Addorder.swift */; };
+		54EAB5A120D9766B00C25DC1 /* Api+Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAB5A020D9766B00C25DC1 /* Api+Orders.swift */; };
 		54EB127020E7A6A2005B2EB7 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB126F20E7A6A2005B2EB7 /* MeVC.swift */; };
 		54F15F7420C01A7A000640D6 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F15F7320C01A7A000640D6 /* Style.swift */; };
+		54F3B9BC21074E6900FD13A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54F3B9BB21074E6900FD13A9 /* GoogleService-Info.plist */; };
+		54F4DEA921011B480046BDF2 /* ChatVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F4DEA821011B480046BDF2 /* ChatVc.swift */; };
+		54F4DEAB21011B790046BDF2 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F4DEAA21011B790046BDF2 /* ChatCell.swift */; };
 		54F847AA20C9CB2100F29F92 /* TextFiled+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F847A920C9CB2100F29F92 /* TextFiled+extention.swift */; };
+		54FF731E20F35F3D00FD5747 /* OrdersVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FF731D20F35F3D00FD5747 /* OrdersVc.swift */; };
+		54FF732020F35F8900FD5747 /* BarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FF731F20F35F8900FD5747 /* BarCollectionViewCell.swift */; };
 		610CC967905CAE312FAC79AD /* Pods_Halan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A6483A9C6432CA3019638C /* Pods_Halan.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		54F3B9D3210779CE00FD13A9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1B81AED6057CE34240BA7757 /* Pods-Halan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Halan/Pods-Halan.release.xcconfig"; sourceTree = "<group>"; };
+		5406DADA20F5FEFD0065E5F7 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		5406DADC20F628810065E5F7 /* CurentOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurentOrder.swift; sourceTree = "<group>"; };
+		5406DADE20F62E1B0065E5F7 /* OrderDetailesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailesVC.swift; sourceTree = "<group>"; };
 		54095A8120EFCFC600C83A72 /* NotifactionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifactionsVC.swift; sourceTree = "<group>"; };
 		54095A8320EFCFFB00C83A72 /* NotiViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiViewCell.swift; sourceTree = "<group>"; };
 		54095A8520EFE40200C83A72 /* Api+Notifaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Notifaction.swift"; sourceTree = "<group>"; };
 		54095A8720EFE46100C83A72 /* Notifactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifactions.swift; sourceTree = "<group>"; };
+		54095A8920F00B2F00C83A72 /* NotifactionsDetailes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifactionsDetailes.swift; sourceTree = "<group>"; };
 		5416ADFE20C3296B00DCE6E6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		5416AE0120C33DE000DCE6E6 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		5416AE0320C36D2F00DCE6E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5416AE0520C370DD00DCE6E6 /* Halan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Halan.entitlements; sourceTree = "<group>"; };
 		54428E4020EEAFF200E378A6 /* BankAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountCell.swift; sourceTree = "<group>"; };
 		5456E22720AE492C00A43A19 /* Halan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Halan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +111,8 @@
 		548B4D1520E9075C00839347 /* Api+BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+BankAccount.swift"; sourceTree = "<group>"; };
 		548B4D1720E90E4200839347 /* BankAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccounts.swift; sourceTree = "<group>"; };
 		548DE19420C4211D00651253 /* Firebase+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Extention.swift"; sourceTree = "<group>"; };
+		548ED4CB20FE321A00FAF500 /* ordersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ordersModel.swift; sourceTree = "<group>"; };
+		5494A46021069AA900AB0DE8 /* Api+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Driver.swift"; sourceTree = "<group>"; };
 		54A1C77720D67535004011A3 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		54A1C77920D68EE6004011A3 /* actionCheet+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "actionCheet+extention.swift"; sourceTree = "<group>"; };
 		54B0900920C214CB0003813C /* RegistartionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistartionVC.swift; sourceTree = "<group>"; };
@@ -100,10 +128,17 @@
 		54E772E920E11CBE00E7E8A6 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		54E772EB20E126E200E7E8A6 /* Api+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Profile.swift"; sourceTree = "<group>"; };
 		54E772ED20E1270B00E7E8A6 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
-		54EAB5A020D9766B00C25DC1 /* Api+Addorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Addorder.swift"; sourceTree = "<group>"; };
+		54EAB5A020D9766B00C25DC1 /* Api+Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Orders.swift"; sourceTree = "<group>"; };
 		54EB126F20E7A6A2005B2EB7 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		54F15F7320C01A7A000640D6 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		54F3B9BB21074E6900FD13A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		54F3B9C2210779CD00FD13A9 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		54F3B9C4210779CD00FD13A9 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		54F4DEA821011B480046BDF2 /* ChatVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVc.swift; sourceTree = "<group>"; };
+		54F4DEAA21011B790046BDF2 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		54F847A920C9CB2100F29F92 /* TextFiled+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFiled+extention.swift"; sourceTree = "<group>"; };
+		54FF731D20F35F3D00FD5747 /* OrdersVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVc.swift; sourceTree = "<group>"; };
+		54FF731F20F35F8900FD5747 /* BarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCollectionViewCell.swift; sourceTree = "<group>"; };
 		72AF262CDA2B9812992F4696 /* Pods-Halan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Halan/Pods-Halan.debug.xcconfig"; sourceTree = "<group>"; };
 		93A6483A9C6432CA3019638C /* Pods_Halan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Halan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,6 +161,7 @@
 			children = (
 				54095A8120EFCFC600C83A72 /* NotifactionsVC.swift */,
 				54095A8320EFCFFB00C83A72 /* NotiViewCell.swift */,
+				54095A8920F00B2F00C83A72 /* NotifactionsDetailes.swift */,
 			);
 			path = Notifactions;
 			sourceTree = "<group>";
@@ -192,8 +228,8 @@
 		5456E23D20AE5BD300A43A19 /* Supportedfile */ = {
 			isa = PBXGroup;
 			children = (
-				5416AE0320C36D2F00DCE6E6 /* GoogleService-Info.plist */,
 				5456E23120AE493D00A43A19 /* Assets.xcassets */,
+				54F3B9BB21074E6900FD13A9 /* GoogleService-Info.plist */,
 			);
 			path = Supportedfile;
 			sourceTree = "<group>";
@@ -205,6 +241,7 @@
 				54E772ED20E1270B00E7E8A6 /* ProfileData.swift */,
 				548B4D1720E90E4200839347 /* BankAccounts.swift */,
 				54095A8720EFE46100C83A72 /* Notifactions.swift */,
+				548ED4CB20FE321A00FAF500 /* ordersModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,12 +249,13 @@
 		5456E23F20AE5BF200A43A19 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5456E22A20AE492C00A43A19 /* AppDelegate.swift */,
+				54FF731C20F35EFC00FD5747 /* Orders */,
 				54095A8020EFCF9100C83A72 /* Notifactions */,
 				5489741920EE249D006EF1E8 /* other */,
 				548B4D0E20E8EC9D00839347 /* Me */,
 				5459AADB20CC25C0003724D4 /* Home */,
 				54B0900820C210CE0003813C /* User */,
-				5456E22A20AE492C00A43A19 /* AppDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -247,11 +285,12 @@
 				547FF00E20B0BFAE002EF1C6 /* Api+Login.swift */,
 				547FF01020B0C0BD002EF1C6 /* Api+Registration.swift */,
 				54B0C52B20CF5E97001EDDA9 /* Api+direction.swift */,
-				54EAB5A020D9766B00C25DC1 /* Api+Addorder.swift */,
+				54EAB5A020D9766B00C25DC1 /* Api+Orders.swift */,
 				54E772EB20E126E200E7E8A6 /* Api+Profile.swift */,
 				548B4D1120E8F5C800839347 /* Api+contactUs.swift */,
 				548B4D1520E9075C00839347 /* Api+BankAccount.swift */,
 				54095A8520EFE40200C83A72 /* Api+Notifaction.swift */,
+				5494A46021069AA900AB0DE8 /* Api+Driver.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -287,11 +326,35 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		54F4DEA721011AE40046BDF2 /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				54F4DEA821011B480046BDF2 /* ChatVc.swift */,
+				54F4DEAA21011B790046BDF2 /* ChatCell.swift */,
+			);
+			path = chat;
+			sourceTree = "<group>";
+		};
+		54FF731C20F35EFC00FD5747 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				54F4DEA721011AE40046BDF2 /* chat */,
+				54FF731D20F35F3D00FD5747 /* OrdersVc.swift */,
+				54FF731F20F35F8900FD5747 /* BarCollectionViewCell.swift */,
+				5406DADA20F5FEFD0065E5F7 /* OrderCell.swift */,
+				5406DADC20F628810065E5F7 /* CurentOrder.swift */,
+				5406DADE20F62E1B0065E5F7 /* OrderDetailesVC.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
 		5EAF3C8DC8468E382844A340 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				54D3042C20C5839300C9B622 /* AudioToolbox.framework */,
 				93A6483A9C6432CA3019638C /* Pods_Halan.framework */,
+				54F3B9C2210779CD00FD13A9 /* UserNotifications.framework */,
+				54F3B9C4210779CD00FD13A9 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -318,6 +381,7 @@
 				5456E22520AE492C00A43A19 /* Resources */,
 				3FF2BBCDAD5D097AEFB0FA1B /* [CP] Embed Pods Frameworks */,
 				D1164E65C3C07094CEC1B79E /* [CP] Copy Pods Resources */,
+				54F3B9D3210779CE00FD13A9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -334,7 +398,7 @@
 		5456E21F20AE492B00A43A19 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = alatheertech;
 				TargetAttributes = {
@@ -382,7 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5456E23520AE493D00A43A19 /* LaunchScreen.storyboard in Resources */,
-				5416AE0420C36D3000DCE6E6 /* GoogleService-Info.plist in Resources */,
+				54F3B9BC21074E6900FD13A9 /* GoogleService-Info.plist in Resources */,
 				5456E23220AE493D00A43A19 /* Assets.xcassets in Resources */,
 				5456E23020AE492C00A43A19 /* Main.storyboard in Resources */,
 			);
@@ -401,14 +465,16 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Font-Awesome-Swift/Font_Awesome_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/UIImageViewModeScaleAspect/UIImageViewModeScaleAspect.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -416,14 +482,16 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Font_Awesome_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImageViewModeScaleAspect.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,8 +546,10 @@
 			files = (
 				547FF01120B0C0BD002EF1C6 /* Api+Registration.swift in Sources */,
 				54E772EA20E11CBE00E7E8A6 /* Profile.swift in Sources */,
+				54FF732020F35F8900FD5747 /* BarCollectionViewCell.swift in Sources */,
 				54A1C77820D67535004011A3 /* PopUpViewController.swift in Sources */,
 				54E772EE20E1270B00E7E8A6 /* ProfileData.swift in Sources */,
+				5406DADF20F62E1B0065E5F7 /* OrderDetailesVC.swift in Sources */,
 				54EB127020E7A6A2005B2EB7 /* MeVC.swift in Sources */,
 				54F15F7420C01A7A000640D6 /* Style.swift in Sources */,
 				548B4D1620E9075C00839347 /* Api+BankAccount.swift in Sources */,
@@ -491,8 +561,10 @@
 				54B0900A20C214CB0003813C /* RegistartionVC.swift in Sources */,
 				54BC2FD120CAC89900B495D5 /* String+Extension.swift in Sources */,
 				54B0C52A20CF5D04001EDDA9 /* Directions.swift in Sources */,
-				54EAB5A120D9766B00C25DC1 /* Api+Addorder.swift in Sources */,
+				5494A46121069AA900AB0DE8 /* Api+Driver.swift in Sources */,
+				54EAB5A120D9766B00C25DC1 /* Api+Orders.swift in Sources */,
 				54663DA620DD7AA800BCCA47 /* ForgetPassVC.swift in Sources */,
+				54095A8A20F00B2F00C83A72 /* NotifactionsDetailes.swift in Sources */,
 				54F847AA20C9CB2100F29F92 /* TextFiled+extention.swift in Sources */,
 				54095A8420EFCFFB00C83A72 /* NotiViewCell.swift in Sources */,
 				548B4D1820E90E4200839347 /* BankAccounts.swift in Sources */,
@@ -500,7 +572,10 @@
 				54C2F60020CD6EAD00815F36 /* SearchResultsController.swift in Sources */,
 				54C2F5FE20CD555C00815F36 /* HomeVC.swift in Sources */,
 				548B4D1020E8F26300839347 /* ContactUs.swift in Sources */,
+				54F4DEA921011B480046BDF2 /* ChatVc.swift in Sources */,
 				54A1C77A20D68EE7004011A3 /* actionCheet+extention.swift in Sources */,
+				5406DADD20F628820065E5F7 /* CurentOrder.swift in Sources */,
+				54FF731E20F35F3D00FD5747 /* OrdersVc.swift in Sources */,
 				54BC2FD220CAC89900B495D5 /* Bool+Extension.swift in Sources */,
 				54095A8220EFCFC600C83A72 /* NotifactionsVC.swift in Sources */,
 				54B3C1FE20C188C100EC8428 /* GradientView.swift in Sources */,
@@ -509,9 +584,12 @@
 				5416AE0220C33DE000DCE6E6 /* Helper.swift in Sources */,
 				54095A8620EFE40200C83A72 /* Api+Notifaction.swift in Sources */,
 				5456E22B20AE492C00A43A19 /* AppDelegate.swift in Sources */,
+				548ED4CC20FE321A00FAF500 /* ordersModel.swift in Sources */,
 				54BC2FD320CAC89900B495D5 /* JSON+Extension.swift in Sources */,
+				54F4DEAB21011B790046BDF2 /* ChatCell.swift in Sources */,
 				548B4D1420E904BB00839347 /* PrivacyVC.swift in Sources */,
 				548B4D1220E8F5C800839347 /* Api+contactUs.swift in Sources */,
+				5406DADB20F5FEFD0065E5F7 /* OrderCell.swift in Sources */,
 				54664F0D20AF0E3D0086C939 /* Extentions.swift in Sources */,
 				54095A8820EFE46100C83A72 /* Notifactions.swift in Sources */,
 				54E772EC20E126E200E7E8A6 /* Api+Profile.swift in Sources */,
@@ -661,17 +739,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 72AF262CDA2B9812992F4696 /* Pods-Halan.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Halan/Halan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZYXWKAWWZ4;
+				DEVELOPMENT_TEAM = 7GW5AKF836;
 				INFOPLIST_FILE = Halan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apptech.Halan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apptech.HalanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -683,17 +762,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1B81AED6057CE34240BA7757 /* Pods-Halan.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Halan/Halan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZYXWKAWWZ4;
+				DEVELOPMENT_TEAM = 7GW5AKF836;
 				INFOPLIST_FILE = Halan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apptech.Halan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apptech.HalanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

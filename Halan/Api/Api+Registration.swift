@@ -36,9 +36,10 @@ class Api: NSObject {
                         let user_phone = Int(data["user_phone"].string!)
                         let user_email = data["user_email"].string
                         let user_photo = data["user_photo"].string
+                        let user_type = data["user_type"].string
 
                         /////////
-                        Helper.setUserData(user_id: user_id, user_email: user_email!, user_name: user_name!, user_phone: user_phone!,user_photo: user_photo!)
+                        Helper.setUserData(user_id: user_id, user_email: user_email!, user_name: user_name!, user_phone: user_phone!,user_photo: user_photo!,user_type:user_type!)
                         completion(nil ,true)
                     }
                 }
