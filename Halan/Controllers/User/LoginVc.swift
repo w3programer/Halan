@@ -48,6 +48,11 @@ class LoginVC: UIViewController {
         
         self.performSegue(withIdentifier: "ForgetSegue", sender: self)
     }
+    @IBAction func skip(_ sender: Any) {
+    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeView") as? HomeVC
+       self.navigationController?.pushViewController(vc!, animated: true)
+       // self.present(vc!,animated: true, completion: nil)
+    }
     
 }
 

@@ -84,23 +84,23 @@ class CurentOrder: UIViewController,MKMapViewDelegate{
             }
         }else{
           
-            let alert = UIAlertController(title: "cancelltion Reasons", message: "Please Select an Option from this reasons", preferredStyle: .actionSheet)
+            let alert = UIAlertController(title:NSLocalizedString("cancelltion Reasons", comment: "") , message: NSLocalizedString("Please Select an Option from this reasons", comment: "") , preferredStyle: .actionSheet)
             
-            alert.addAction(UIAlertAction(title: "Driver Delayed", style: .default , handler:{ (UIAlertAction)in
+            alert.addAction(UIAlertAction(title:NSLocalizedString("Driver Delayed", comment: ""), style: .default , handler:{ (UIAlertAction)in
               self.cancellReport(reasonValue: "1")
             }))
             
-            alert.addAction(UIAlertAction(title: "Cancel Order", style: .default , handler:{ (UIAlertAction)in
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel Order", comment: ""), style: .default , handler:{ (UIAlertAction)in
                 self.cancellReport(reasonValue: "2")
             }))
             
-            alert.addAction(UIAlertAction(title: "Other reasons", style: .destructive , handler:{ (UIAlertAction)in
+            alert.addAction(UIAlertAction(title:NSLocalizedString("Other reasons", comment: "") , style: .destructive , handler:{ (UIAlertAction)in
 
                 self.cancellReport(reasonValue: "3")
 
             }))
             
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+            alert.addAction(UIAlertAction(title:NSLocalizedString("Dismiss", comment: "") , style: .cancel, handler:{ (UIAlertAction)in
                 self.trySendingOrder()
 
             }))
@@ -119,35 +119,33 @@ class CurentOrder: UIViewController,MKMapViewDelegate{
       self.trySendingOrder()
     }
     func trySendingOrder() {
-        let alert = UIAlertController(title: "More", message: "Send order to another driver", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "yes", style: .default , handler:{ (UIAlertAction)in
+        let alert = UIAlertController(title:NSLocalizedString("More", comment: "") , message: NSLocalizedString("Send order to another driver", comment: ""), preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title:NSLocalizedString("yes", comment: "") , style: .default , handler:{ (UIAlertAction)in
 
            /////////////
         }))
         
-        alert.addAction(UIAlertAction(title: "No Thanks", style: .destructive , handler:{ (UIAlertAction)in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("No Thanks", comment: ""), style: .destructive , handler:{ (UIAlertAction)in
 
         }))
         
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+        alert.addAction(UIAlertAction(title:NSLocalizedString("Dismiss", comment: "") , style: .cancel, handler:{ (UIAlertAction)in
         }))
         
         self.present(alert, animated: true, completion: {
         })
 
     }
-    
     @IBAction func chat(_ sender: UIButton) {
         self.performSegue(withIdentifier: "ChatSegue", sender: self)
-        
-        
-        
-        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChatSegue" {
             let destinationVC = segue.destination as! ChatVc
             destinationVC.clientChatHed.title = dataarr?.client_name
+         //destinationVC.chatarr = dataarr
+            destinationVC.roomId = (dataarr?.room_id)!
+            //chatData
         }
     }
     

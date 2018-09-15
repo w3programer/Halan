@@ -1,0 +1,15 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "حالا";
+
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "السماح لحالا  باستخدام الكاميرا لالتقاط الصور";
+
+/* Privacy - Location Always and When In Use Usage Description */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "السماح  لتطبيق حالا بالوصول الي موقعك";
+
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "السماح لتطبيق حالا بالوصول الي موقعك";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "السماح للتطبيق بالوصول الي مكتبه الصور";
+

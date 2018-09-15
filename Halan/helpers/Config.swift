@@ -18,13 +18,17 @@ struct Config {
     static let UpdateClient = main + "Api/UpdateClient/"
     ///UpdateDriver
     static let UpdateDriver = main + "Api/UpdateDriver/"
+    //////////////////////////////////////////////////////////
     //ShowDrivers
     static let ShowDrivers = main + "Api/ShowDrivers/"
     //DestanceCost
     static let DestanceCost = main + "Api/DestanceCost/"
     //addMyOrder
     static let AddMyOrder = main + "Api/AddMyOrder/"
+    //////////////////////////////////////////////////////////////////
+
     //driver orders
+    
     static let viewdriverOrder = main + "Api/ViewDriverOrders/"
     static let driverCancelOrder = main + "Api/DriverCancelOrder/\(Helper.getuserid())"
     static let orderDelivered = main + "Api/OrderDelivered/"
@@ -43,11 +47,16 @@ struct Config {
 
     //contactus
     static let Contactus = main + "Api/ContactUs/"
+    static let pay = main + "Api/DriverPayment/"
+
     static let AboutApp = main + "Api/AboutApp/"
     static let Privacypolicy = main + "Api/PolicyApp/"
     static let Rules = main + "Api/TermsAndConditions/"
     static let bankAccounts = main + "Api/BankAccounts/"
     //uploads path
     static let uploads = main + "uploads/images/"
+    /////////chat api
+    static let chatRoom = main + "Chating/ChatRoom/"
+    static let sendMessage = main + "Chating/SendMessage/"
     
 }

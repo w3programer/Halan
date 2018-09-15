@@ -30,8 +30,8 @@ class RegistartionVC: UIViewController,UIImagePickerControllerDelegate,UINavigat
         guard let username = username.text,!username.isEmpty else{return}
         guard let phone = Phone.text,!phone.isEmpty else{return}
         guard let Email = email.text,!Email.isEmpty else{return}
-        guard let age = Age.text,!age.isEmpty else{return}
-        guard let gender = gender.text,!gender.isEmpty else{return}
+        //guard let age = Age.text,!age.isEmpty else{return}
+       // guard let gender = gender.text,!gender.isEmpty else{return}
         guard let Password = password.text,!Password.isEmpty else{return}
         guard let passwordrepeet = repetPassword.text,!passwordrepeet.isEmpty,passwordrepeet == Password   else{
             let title:String = NSLocalizedString("report", comment: "")
@@ -43,7 +43,17 @@ class RegistartionVC: UIViewController,UIImagePickerControllerDelegate,UINavigat
             return
             
         }
-        Api.registration(username:username ,password:Password ,email:Email,phone:phone,fullname:name,age:age,gender:gender,photo:UserImage.image!.encodeimage(format: ImageFormat.JPEG(0)),token:messageconfig.getDevicetoken(), completion: { (error:Error?, success :Bool) in
+        var age = "0"
+        if !(Age.text?.isEmpty)!{
+            age = Age.text!
+        }
+        var Gender = "non"
+
+        if !(gender.text?.isEmpty)!{
+            Gender = gender.text!
+        }
+        
+        Api.registration(username:username ,password:Password ,email:Email,phone:phone,fullname:name,age:age,gender:Gender,photo:UserImage.image!.encodeimage(format: ImageFormat.JPEG(0)),token:messageconfig.getDevicetoken(), completion: { (error:Error?, success :Bool) in
             
             
             if success {

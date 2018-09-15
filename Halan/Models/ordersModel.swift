@@ -31,6 +31,7 @@ class ordersModel: NSObject {
     var client_google_lang :Double
     var client_google_lat :Double
     var client_location :String = ""
+    var room_id :String = ""
     init?(dic:[String:JSON]) {
         guard let order_id = dic["order_id"]?.string ,let clientname = dic["client_name"]?.string ,let phone = dic["client_phone"]?.string  else {
             return nil
@@ -66,6 +67,7 @@ class ordersModel: NSObject {
         self.order_start_time = (dic["order_start_time"]?.string)!
         self.order_start_from_minute = (dic["order_start_from_minute"]?.string)!
         self.cost = (dic["cost"]?.string)!
+        self.room_id = (dic["room_id"]?.string)!
 
         
     }

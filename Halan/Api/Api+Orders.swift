@@ -8,10 +8,10 @@ extension Api{
             {
             case.failure(let error):
                 completion(error,nil)
-                print(error)
+                //print(error)
             case.success(let value):
                 let json = JSON(value)
-                // print(json)
+                print(json)
                 guard let dataArr = json.array else{
                     completion(nil , nil)
                     return
@@ -97,6 +97,43 @@ extension Api{
                     completion(error , false)
                 case .success(let value):
                     let data = JSON(value)
+                    if  (data["success"].int == 1) {
+                        completion(nil ,true)
+                    }
+                    
+                }
+                
+        }
+        
+    }
+ /////////////////request order to drivers
+    class func requestOrderTodriver(clientlocation:String,clientLat:Double,clientLong:Double,marketlocation:String,marketlat:Double,marketlong:Double,distance:String,orderdetailes:String,cost:String,drivers:Array<String>,completion:@escaping(_ error :Error? ,_ success :Bool)->Void){
+        let BaseUrl = Config.AddMyOrder
+        let parameters = [
+            "user_id":Helper.getuserid(),
+            "client_location":clientlocation,
+            "client_google_lang":clientLong,
+            "client_google_lat":clientLat,
+            "market_location":marketlocation,
+            "market_google_lang":marketlong,
+            "market_google_lat":marketlat,
+            "distance":distance,
+            "order_details":orderdetailes,
+            "total_cost":cost,
+            "driver_id":drivers
+            ] as [String : Any]
+        //print(parameters)
+        Alamofire.request(BaseUrl, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil)
+            .validate(statusCode:200..<300)
+            .responseJSON { response in
+                switch response.result
+                {
+                case .failure( let error):
+                    print(error)
+                    completion(error , false)
+                case .success(let value):
+                    let data = JSON(value)
+                    print(data)
                     if  (data["success"].int == 1) {
                         completion(nil ,true)
                     }

@@ -1,0 +1,117 @@
+/* Reial */
+" SR" = "ريال";
+
+/* No comment provided by engineer. */
+"can not match password " = "كلمة المرور غير مطابقه";
+
+/* No comment provided by engineer. */
+"Cancel Order" = " إلغاد الطلب";
+
+/* Canceled */
+"Canceled" = "الطلبات الملغاة";
+
+/* No comment provided by engineer. */
+"cancelltion Reasons" = "سبب الإلغاء";
+
+/* No comment provided by engineer. */
+"connectionbody" = "الاتصال";
+
+/* Current */
+"Current" = "الطلبات الحاليه";
+
+/* No comment provided by engineer. */
+"Dismiss" = "   تجاهل";
+
+/* No comment provided by engineer. */
+"Driver Delayed" = "لقدتأخر السائق";
+
+/* driver registration */
+"Driver Registeration" = "التسجيل كسائق";
+
+/* No comment provided by engineer. */
+"error while executing your request" = "خطأ في تسجيل طلبك من فضلك اعد المحاولة";
+
+/* whatsapp */
+"facebook" = "فيس بوك";
+
+/* No comment provided by engineer. */
+"failed" = "فشل";
+
+/* No comment provided by engineer. */
+"Femail" = "انثي";
+
+/* whatsapp */
+"google" = "قوقل";
+
+/* share */
+"halan app in your service" = "حالا في خدمتك ";
+
+/* whatsapp */
+"instigram" = "انستقرام";
+
+/* No comment provided by engineer. */
+"loginmessagehead" = "تقرير";
+
+/* No comment provided by engineer. */
+"Mail" = "ذكر";
+
+/* your location */
+"me" = "انا";
+
+/* No comment provided by engineer. */
+"message body" = "رساله تقرير";
+
+/* No comment provided by engineer. */
+"message sent success" = "تم ارسال الرسالة بنجاح";
+
+/* No comment provided by engineer. */
+"message title" = "عنوان الرسالة";
+
+/* No comment provided by engineer. */
+"More" = "مزيد";
+
+/* No comment provided by engineer. */
+"No Thanks" = "لا شكرا";
+
+/* No comment provided by engineer. */
+"Other reasons" = "اسباب أخرى";
+
+/* No comment provided by engineer. */
+"payment sent success" = "تم ارسال التحويل بنجاح";
+
+/* No comment provided by engineer. */
+"Please Select an Option from this reasons" = "من فضلك قم بإختيار سبب للإلغاء";
+
+/* Previous */
+"Previous" = "الطلبات السابقه";
+
+/* No comment provided by engineer. */
+"report" = "تقرير";
+
+/* No comment provided by engineer. */
+"Send order to another driver" = "إرسال الي سائق آخر";
+
+/* whatsapp */
+"snapchat" = "سناب شات";
+
+/* No comment provided by engineer. */
+"success" = "نجح";
+
+/* No comment provided by engineer. */
+"sucess " = "نجح";
+
+/* whatsapp */
+"twitter" = "تويتر";
+
+/* No comment provided by engineer. */
+"updated success" = "تم التعديل بنجاح";
+
+/* No comment provided by engineer. */
+"username or password is empty" = " خطأ راجع  بياناتك";
+
+/* No comment provided by engineer. */
+"yes" = "نعم";
+
+/* location */
+"your current location here" = "موقعك";
+

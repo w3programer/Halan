@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="jce-lp-L0z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="yyf-r1-xFB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jce-lp-L0z" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CQQ-qV-Lgq"/>
-                            <constraint firstItem="jce-lp-L0z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KJE-oK-TS4"/>
-                            <constraint firstItem="jce-lp-L0z" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ZmV-Yj-UP1"/>
-                            <constraint firstItem="jce-lp-L0z" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aEz-Ns-NmH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yyf-r1-xFB" secondAttribute="trailing" id="Jqu-Yf-ylD"/>
+                            <constraint firstItem="yyf-r1-xFB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Oj0-kL-pCs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yyf-r1-xFB" secondAttribute="bottom" id="U8B-17-uo4"/>
+                            <constraint firstItem="yyf-r1-xFB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wnV-M1-bac"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splash" width="360" height="640"/>
+        <image name="splash" width="240" height="412"/>
     </resources>
 </document>

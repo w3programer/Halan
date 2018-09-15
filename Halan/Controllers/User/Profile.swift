@@ -28,14 +28,14 @@ class Profile: UIViewController,UIImagePickerControllerDelegate,UINavigationCont
     func Profile(){
         Api.profile{(error: Error?,info:[ProfileData]?)in
             if let data = info {
-                self.Username.text = data[0].user_full_name
-                self.Name.text = data[0].user_name
+                self.Username.text = data[0].user_name
+                self.Name.text = data[0].user_full_name
                 self.email.text = data[0].user_email
                 self.Phone.text = data[0].user_phone
-                       self.Photo.image =  #imageLiteral(resourceName: "user-avatar")
+                       self.Photo.image =  #imageLiteral(resourceName: "user-placeholder")
                         self.Photo.kf.indicatorType = .activity
                         if let url = URL(string: data[0].user_photo){
-                            self.Photo.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "user-avatar"), options: [.transition(ImageTransition.flipFromTop(0.5))], progressBlock: nil, completionHandler: nil)
+                            self.Photo.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "user-placeholder"), options: [.transition(ImageTransition.flipFromTop(0.5))], progressBlock: nil, completionHandler: nil)
                                                                      }
                        }
                     

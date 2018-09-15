@@ -41,6 +41,10 @@ class MeVC: UIViewController {
     }
     
     @IBAction func Pay(_ sender: UIButton) {
+        if Helper.isDriver() == true {
+            self.performSegue(withIdentifier: "driverPaySegue", sender: self)
+
+        }
     }
     
     @IBAction func Share(_ sender: UIButton) {

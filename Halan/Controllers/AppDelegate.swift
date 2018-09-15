@@ -7,26 +7,21 @@ import FirebaseInstanceID
 import UserNotifications
 import IQKeyboardManagerSwift
 import CoreLocation
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate{
     var window: UIWindow?
     var tokenid  = ""
     let locationmanager = CLLocationManager()
     var location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
              self.updateLocation()
         GMSServices.provideAPIKey("AIzaSyArjmbYWTWZhDFFtPOLRLKYwjtBDkOEGrY")
         GMSPlacesClient.provideAPIKey("AIzaSyBNUlPmpibuzvp2C3bMn9z2c_kXzmFjD7Q")
-        
-        
+
          if Helper.getUserData() == true {
         let tab = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
          window?.rootViewController = tab
-        
          }
         FirebaseApp.configure()
         
@@ -50,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
 
         
         IQKeyboardManager.shared.enable = true
+        sleep(3)
         return true
     }
    
