@@ -115,3 +115,6 @@
 /* location */
 "your current location here" = "موقعك";
 
+/* No comment provided by engineer. */
+"your order hase been sent successfuly " = "تم ارسال طلبك لاقرب سائقين محيطين بك";
+

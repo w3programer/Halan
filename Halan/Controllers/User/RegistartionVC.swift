@@ -25,10 +25,11 @@ class RegistartionVC: UIViewController,UIImagePickerControllerDelegate,UINavigat
         imagepicker.delegate = self
         textfiledimage()
     }
+    
     @IBAction func register(_ sender: UIButton) {
         guard let name = Name.text,!name.isEmpty else {return}
         guard let username = username.text,!username.isEmpty else{return}
-        guard let phone = Phone.text,!phone.isEmpty else{return}
+        guard let phone = Phone.text?.replacedArabicDigitsWithEnglish,!phone.isEmpty else{return}
         guard let Email = email.text,!Email.isEmpty else{return}
         //guard let age = Age.text,!age.isEmpty else{return}
        // guard let gender = gender.text,!gender.isEmpty else{return}
@@ -44,7 +45,7 @@ class RegistartionVC: UIViewController,UIImagePickerControllerDelegate,UINavigat
             
         }
         var age = "0"
-        if !(Age.text?.isEmpty)!{
+        if !(Age.text?.replacedArabicDigitsWithEnglish.isEmpty)!{
             age = Age.text!
         }
         var Gender = "non"
@@ -53,7 +54,7 @@ class RegistartionVC: UIViewController,UIImagePickerControllerDelegate,UINavigat
             Gender = gender.text!
         }
         
-        Api.registration(username:username ,password:Password ,email:Email,phone:phone,fullname:name,age:age,gender:Gender,photo:UserImage.image!.encodeimage(format: ImageFormat.JPEG(0)),token:messageconfig.getDevicetoken(), completion: { (error:Error?, success :Bool) in
+        Api.registration(username:username ,password:Password ,email:Email,phone:phone,fullname:name,age:age,gender:Gender,photo:UserImage.image!.encodeimage(format: ImageFormat.JPEG(0)),token:Helper.getdevicestoken(), completion: { (error:Error?, success :Bool) in
             
             
             if success {
@@ -84,15 +85,18 @@ class RegistartionVC: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBAction func SelectImage(_ sender: UIButton) {
      self.present(imagepicker, animated: true, completion: nil)
     }
-   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as?UIImage{
+   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as?UIImage{
             UserImage.image = image
         }
     
     
-    if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+    if let editedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
         UserImage.image = editedImage
-    } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+    } else if let originalImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
         UserImage.image = originalImage
     }
         imagepicker.dismiss(animated: true, completion: nil)
@@ -143,3 +147,13 @@ extension RegistartionVC :UIPickerViewDelegate,UIPickerViewDataSource{
 
 
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}

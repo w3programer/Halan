@@ -17,7 +17,7 @@
 "4wc-Sf-IdH.placeholder" = "جوال";
 
 /* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "5F8-VG-3gx"; */
-"5F8-VG-3gx.normalTitle" = " خروخ";
+"5F8-VG-3gx.normalTitle" = " خروج";
 
 /* Class = "UILabel"; text = "date"; ObjectID = "5IE-ag-rqW"; */
 "5IE-ag-rqW.text" = "تاريخ";
@@ -49,8 +49,8 @@
 /* Class = "UINavigationItem"; title = "Restore Password"; ObjectID = "an4-Dr-NPM"; */
 "an4-Dr-NPM.title" = "إستعادة كلمة المرور";
 
-/* Class = "UIButton"; normalTitle = "Pay"; ObjectID = "bCc-v5-mOg"; */
-"bCc-v5-mOg.normalTitle" = "دفع";
+/* Class = "UIButton"; normalTitle = "Recharge your  account "; ObjectID = "bCc-v5-mOg"; */
+"bCc-v5-mOg.normalTitle" = "إعاده شحن حسابك كسائق";
 
 /* Class = "UILabel"; text = "Order Detaies"; ObjectID = "bJg-3U-dy8"; */
 "bJg-3U-dy8.text" = "تفاصيل الطلب";
@@ -211,6 +211,9 @@
 /* Class = "UIButton"; normalTitle = "Forget Password"; ObjectID = "Oa5-0h-LmO"; */
 "Oa5-0h-LmO.normalTitle" = "نسيت كلمة المرور";
 
+/* Class = "UIButton"; normalTitle = "skip"; ObjectID = "OBS-pS-0Y6"; */
+"OBS-pS-0Y6.normalTitle" = "تخطي";
+
 /* Class = "UITextField"; placeholder = "Message"; ObjectID = "Ogu-Z6-hIJ"; */
 "Ogu-Z6-hIJ.placeholder" = "رسالة";
 
@@ -259,7 +262,7 @@
 /* Class = "UILabel"; text = "bank name"; ObjectID = "sF3-hc-jg6"; */
 "sF3-hc-jg6.text" = "إسم البنك";
 
-/* Class = "UIButton"; normalTitle = "Create new account"; ObjectID = "T0i-yp-MLt"; */
+/* Class = "UIButton"; normalTitle = "register"; ObjectID = "T0i-yp-MLt"; */
 "T0i-yp-MLt.normalTitle" = "حساب جديد";
 
 /* Class = "UIButton"; normalTitle = "Finish"; ObjectID = "TJt-a3-bBa"; */

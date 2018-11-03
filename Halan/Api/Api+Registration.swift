@@ -4,6 +4,13 @@ import Alamofire
 import  SwiftyJSON
 class Api: NSObject {    
     class func registration(
+        
+        
+        
+        
+        
+        
+        
         username:String ,password:String ,email:String,phone:String,fullname:String,age:String,gender:String,photo:String,token:String,completion:@escaping(_ error :Error? ,_ success :Bool)->Void){
         let BaseUrl = Config.registration
         let parameters = [

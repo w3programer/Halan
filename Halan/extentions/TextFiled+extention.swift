@@ -39,18 +39,36 @@ class HATextField: UITextField {
     
     func updateView() {
         if let image = leftImage {
-            leftViewMode = UITextFieldViewMode.always
+            leftViewMode = UITextField.ViewMode.always
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: iconWidth, height: iconWidth))
             imageView.image = image
             // Note: In order for your image to use the tint color, you have to select the image in the Assets.xcassets and change the "Render As" property to "Template Image".
             imageView.tintColor = color
             leftView = imageView
         } else {
-            leftViewMode = UITextFieldViewMode.never
+            leftViewMode = UITextField.ViewMode.never
             leftView = nil
         }
         
         // Placeholder text color
-        attributedPlaceholder = NSAttributedString(string: placeholder != nil ?  placeholder! : "", attributes:[kCTForegroundColorAttributeName as NSAttributedStringKey: color])
+        attributedPlaceholder = NSAttributedString(string: placeholder != nil ?  placeholder! : "", attributes:[kCTForegroundColorAttributeName as NSAttributedString.Key: color])
+    }
+}
+public extension String {
+    
+    public var replacedArabicDigitsWithEnglish: String {
+        var str = self
+        let map = ["٠": "0",
+                   "١": "1",
+                   "٢": "2",
+                   "٣": "3",
+                   "٤": "4",
+                   "٥": "5",
+                   "٦": "6",
+                   "٧": "7",
+                   "٨": "8",
+                   "٩": "9"]
+        map.forEach { str = str.replacingOccurrences(of: $0, with: $1) }
+        return str
     }
 }

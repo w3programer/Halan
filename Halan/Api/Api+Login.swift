@@ -26,7 +26,7 @@ extension Api {
                         let user_photo = data["user_photo"].string
                         let user_type = data["user_type"].string
                         let param = [
-                            "user_token_id":messageconfig.getDevicetoken(),
+                            "user_token_id":Helper.getdevicestoken(),
                             ]
                         Alamofire.request(Config.UpdateTokenId+data["user_id"].string!, method: .post, parameters:
                             param, encoding: URLEncoding.default, headers: nil)

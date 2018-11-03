@@ -35,7 +35,7 @@ class MoreVC: UIViewController , UITableViewDataSource,UITableViewDelegate{
         if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
             if let whatsappURL = URL(string: urlString) {
                 if UIApplication.shared.canOpenURL(whatsappURL){
-                    UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
+                    UIApplication.shared.open(whatsappURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                 }
                 else {
                     print("Install Whatsapp")
@@ -75,7 +75,7 @@ class MoreVC: UIViewController , UITableViewDataSource,UITableViewDelegate{
     }
     @IBAction func email(_ sender: UIButton) {
         let url = NSURL(string: "mailto:\(self.email)")
-        UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(url! as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
 
     }
     @IBAction func google(_ sender: UIButton) {
@@ -97,7 +97,7 @@ class MoreVC: UIViewController , UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BankCell" ,for: indexPath) as! BankAccountCell
-       cell.selectionStyle = UITableViewCellSelectionStyle.none
+       cell.selectionStyle = UITableViewCell.SelectionStyle.none
 
         cell.accountIban.text = tabledata[indexPath.row].account_IBAN
         cell.accountname.text = tabledata[indexPath.row].account_name
@@ -116,4 +116,9 @@ class MoreVC: UIViewController , UITableViewDataSource,UITableViewDelegate{
         }
         
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

@@ -23,12 +23,12 @@ extension UIViewController {
 }
 extension UIView {
     func fadeIn(_ duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in}) {
-        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
             self.alpha = 1.0
         }, completion: completion)  }
     
     func  fadeOut(_ duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in}) {
-        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
             self.alpha = 0.0
         }, completion: completion)
     }
@@ -46,7 +46,7 @@ extension UIViewController {
 }
 //scaleAspectFit
 extension UIImageView {
-    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleToFill) {
+    func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleToFill) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
@@ -61,7 +61,7 @@ extension UIImageView {
             }.resume()
     }
     
-    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleToFill) {
+    func downloadedFrom(link: String, contentMode mode: UIView.ContentMode = .scaleToFill) {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)
     }
@@ -93,8 +93,8 @@ extension UIImage {
     public func encodeimage(format:ImageFormat)->String{
         var imageData:Data?
         switch format {
-        case .PNG:imageData = UIImagePNGRepresentation(self)
-        case .JPEG(let compression):imageData = UIImageJPEGRepresentation(self, compression)
+        case .PNG:imageData = self.pngData()
+        case .JPEG(let compression):imageData = self.jpegData(compressionQuality: compression)
 
         }
         return (imageData?.base64EncodedString())!

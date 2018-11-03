@@ -11,13 +11,22 @@ class MeVC: UIViewController {
     @IBOutlet var Help: UIImageView!
     @IBOutlet var Rate: UIImageView!
     var urltext = ""
+    @IBOutlet weak var payDiv: UIStackView!
     var titlestr = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        let userdata =  Helper.getdata()
-        let urlString = Config.uploads+userdata["user_photo"]!
-        let url = URL(string: urlString )
-        Photo.downloadedFrom(url: url!)
+        
+        if Helper.isDriver() == false {
+            self.payDiv.isHidden = true
+        }
+        
+        if Helper.isguest() == false{
+            let userdata =  Helper.getdata()
+            let urlString = Config.uploads+userdata["user_photo"]!
+            let url = URL(string: urlString )
+            Photo.downloadedFrom(url: url!)
+
+        }
         Rules.setFAIconWithName(icon: .FABook, textColor: .green)
         Complainet.setFAIconWithName(icon: .FAWpforms, textColor: .green)
         Pay.setFAIconWithName(icon: .FAMoney, textColor: .green)
@@ -43,6 +52,13 @@ class MeVC: UIViewController {
     @IBAction func Pay(_ sender: UIButton) {
         if Helper.isDriver() == true {
             self.performSegue(withIdentifier: "driverPaySegue", sender: self)
+
+        }else{
+            let title:String = NSLocalizedString("report", comment: "")
+            let message:String = NSLocalizedString("recharger for driver only ", comment: "")
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: .destructive, handler: nil))
+            self.present(alert,animated: true)
 
         }
     }

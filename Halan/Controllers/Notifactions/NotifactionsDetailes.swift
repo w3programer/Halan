@@ -44,7 +44,7 @@ class NotifactionsDetailes: UIViewController , MKMapViewDelegate{
         let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation)
         let destinationPlaceMark = MKPlacemark(coordinate: destinationLocation)
         
-        let directionRequest = MKDirectionsRequest()
+        let directionRequest = MKDirections.Request()
         directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
         directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
         directionRequest.transportType = .automobile
@@ -60,9 +60,9 @@ class NotifactionsDetailes: UIViewController , MKMapViewDelegate{
             }
             
             let route = directionResonse.routes[0]
-            self.mapView.add(route.polyline, level: .aboveRoads)
+            self.mapView.addOverlay(route.polyline, level: .aboveRoads)
             let rect = route.polyline.boundingMapRect
-            self.mapView.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
+            self.mapView.setRegion(MKCoordinateRegion.init(rect), animated: true)
         }
         
 

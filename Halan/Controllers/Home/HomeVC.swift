@@ -1,6 +1,12 @@
-import UIKit;import GoogleMaps;import GooglePlaces;import CoreLocation
-;import Font_Awesome_Swift;import SwiftyJSON;import Alamofire
-class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocompleteFetcherDelegate ,GMSMapViewDelegate,CLLocationManagerDelegate{
+import UIKit
+import GoogleMaps
+import GooglePlaces
+import CoreLocation
+import Font_Awesome_Swift
+import SwiftyJSON
+import Alamofire
+import GooglePlacesSearchController
+class HomeVC: UIViewController , UISearchBarDelegate ,GMSAutocompleteFetcherDelegate ,GMSMapViewDelegate,CLLocationManagerDelegate{
     @IBOutlet var NavmenuLeading: NSLayoutConstraint!
     @IBOutlet var NavView: UIView!
     @IBOutlet var menuButton: UIBarButtonItem!
@@ -17,7 +23,7 @@ class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocom
     @IBOutlet var orderButtomConst: NSLayoutConstraint!
     var isnaveopen = true
     var googleMapsView: GMSMapView!
-    var searchResultController: SearchResultsController!
+   // var searchResultController: SearchResultsController!
     var resultsArray = [String]()
     var gmsFetcher: GMSAutocompleteFetcher!
     var routes = [JSON]()
@@ -29,18 +35,23 @@ class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocom
     var dataarray = [String]()
     var driverArr = [String]()
     var destinationmarket = CLLocation()
-    
     var distanceCost = ""
     let locationmanager = CLLocationManager()
     var location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
       var marketDestination:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    @IBOutlet var OrderText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let userdata =  Helper.getdata()
-        let urlString = Config.uploads+userdata["user_photo"]!
-        let url = URL(string: urlString )
-        ProfileImage.downloadedFrom(url: url!)
-        ProfileName.setTitle(userdata["user_name"], for: .normal)
+        //self.menuButton.applyNavBarConstraints(size: (width: 33, height: 33))
+
+        if Helper.isguest() == false {
+            let userdata =  Helper.getdata()
+            let urlString = Config.uploads+userdata["user_photo"]!
+            let url = URL(string: urlString )
+            ProfileImage.downloadedFrom(url: url!)
+            ProfileName.setTitle(userdata["user_name"], for: .normal)
+
+        }
         NavmenuLeading.constant =  -300
         OrderButtomConstrain.constant = 200
         self.orderButtomConst.constant = 300
@@ -49,7 +60,7 @@ class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocom
         self.locationmarker.map = nil
         self.polyline.map = nil
     }
-    //////////maps delegate
+//////////maps delegate
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         let position = CLLocationCoordinate2DMake(coordinate.latitude, coordinate.longitude)
         self.destinationmarker.position = position
@@ -65,111 +76,85 @@ class HomeVC: UIViewController , UISearchBarDelegate , LocateOnTheMap,GMSAutocom
        self.googleMapsView.animate(to: camera)
         self.destinationmarker.map = self.googleMapsView
     }
-
-    /**
-     Locate map with longitude and longitude after search location on UISearchBar
-     - parameter lon:   longitude location
-     - parameter lat:   latitude location
-     - parameter title: title of address location
-     */
-    func locateWithLongitude(_ lon: Double, andLatitude lat: Double, andTitle title: String) {
-        DispatchQueue.main.async { () -> Void in
-            let position = CLLocationCoordinate2DMake(lat, lon)
-            // self.googleMapsView.clear()
-            
-            let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: lon, zoom: 15)
-            self.destinationmarker.position = position
-            self.destinationmarker.title = title
-            self.destinationmarker.icon =     UIImage.init(icon:.FAMapMarker, size: CGSize(width: 75, height: 120), textColor: .red)
-            let startlocation = CLLocation(latitude:self.location.latitude , longitude:self.location.longitude )
-            let destination = CLLocation(latitude:lat , longitude:lon)
-            self.marketDestination.longitude = lon
-            self.marketDestination.latitude = lat
-
-            self.drawPath(startLocation: startlocation, endLocation: destination)
-            self.googleMapsView.animate(to: camera)
-            self.destinationmarker.map = self.googleMapsView
-            
-        }
+   //////////////
+    let GoogleMapsAPIServerKey = "AIzaSyArjmbYWTWZhDFFtPOLRLKYwjtBDkOEGrY"//AIzaSyBaqoHePcUxmopcU75X50VBBCAfrWo4nVc
+    var controller: GooglePlacesSearchController!
+    lazy var placesSearchController: GooglePlacesSearchController = {
+        let controller = GooglePlacesSearchController(delegate: self as GooglePlacesAutocompleteViewControllerDelegate,
+                                                      apiKey: GoogleMapsAPIServerKey,
+                                                      placeType: .establishment,
+                                                    coordinate: CLLocationCoordinate2D(latitude: self.location.latitude, longitude: self.location.longitude),
+            radius: 10,
+            strictBounds: true,
+            searchBarPlaceholder: "Start typing..."
+        )
+        controller.searchBar.isTranslucent = false
+       // controller.searchBar.barStyle = .black
+        controller.searchBar.tintColor = .white
+        controller.searchBar.barTintColor = .green
+        return controller
+    }()
+    @IBAction func searchAddress(_ sender: UIBarButtonItem) {
+        present(placesSearchController, animated: true, completion: nil)
     }
-   
-/////////////////////////////////////////
-    func ordermenu(){
+  
+    }
 
-        UIView.animate(withDuration: 0.3, animations: {
-            self.OrderButtomConstrain.constant = 0
-            self.view.layoutIfNeeded()
-            
-        })    }
-    
-    @IBOutlet var OrderText: UITextField!
-    //next
-    @IBAction func Addordertocaret(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.OrderButtomConstrain.constant = 200
-            self.view.layoutIfNeeded()
-            self.orderButtomConst.constant = 0
+////////////////////////////
+extension HomeVC: GooglePlacesAutocompleteViewControllerDelegate {
+    func viewController(didAutocompleteWith place: PlaceDetails) {
+       // print(" late is \(String(describing: place.coordinate?.latitude ))")
+        placesSearchController.isActive = false
+        let lat = place.coordinate?.latitude
+        let lon = place.coordinate?.longitude
 
-        })
+        let position = CLLocationCoordinate2DMake(lat!, lon!)
+        // self.googleMapsView.clear()
+        let camera = GMSCameraPosition.camera(withLatitude: lat!, longitude: lon!, zoom: 15)
+        self.destinationmarker.position = position
+        self.destinationmarker.title = title
+        self.destinationmarker.icon =    UIImage.init(icon:.FAMapMarker, size: CGSize(width: 75, height: 120), textColor: .red)
+        let startlocation = CLLocation(latitude:self.location.latitude , longitude:self.location.longitude )
+        let destination = CLLocation(latitude:lat! , longitude:lon!)
+        self.marketDestination.longitude = lon!
+        self.marketDestination.latitude = lat!
+        self.drawPath(startLocation: startlocation, endLocation: destination)
+        self.googleMapsView.animate(to: camera)
+        self.destinationmarker.map = self.googleMapsView
+
+        
+        
+        
+        
+        
+        
+        
         
     }
-////////////////////////////
+}
+
+extension HomeVC{
     func featchDriver(destination:CLLocation) {
         Api.avilableDriver{(error:Error?, data:[driverModel]?) in
             var distancearray = [String:Double]()
             var strarr = [String]()
             for result in data!{
-          let driverlocation = CLLocation(latitude: result.user_google_lat, longitude: result.user_google_long)
+                let driverlocation = CLLocation(latitude: result.user_google_lat, longitude: result.user_google_long)
                 let dist = destination.distance(from: driverlocation)
                 distancearray = [result.driver_id:dist]
                 let nearstDriver = distancearray.keysSortedByValue(isOrderedBefore: >)
                 
-               for dsa in nearstDriver{
-                   strarr.append(dsa)
+                for dsa in nearstDriver{
+                    strarr.append(dsa)
                 }
                 
-
+                
             }
             self.driverArr = strarr
-
+            
             
         }
     }
-    
-    
-    
-    
-    @IBAction func sendOrderToDriver(_ sender: UIButton) {
-
-        Api.requestOrderTodriver(clientlocation: clientLocation.text!, clientLat: location.latitude, clientLong: location.longitude, marketlocation: MarketLocation.text!, marketlat:  self.marketDestination.longitude, marketlong:  self.marketDestination.longitude, distance: distance.text!, orderdetailes: OrderText.text!, cost: WayCost.text!, drivers: driverArr) { (error:Error?, success:Bool) in
-            
-
-        }
-        
-        UIView.animate(withDuration: 0.05, animations: {
-            self.orderButtomConst.constant = 300
-            self.view.layoutIfNeeded()
-
-        })
-       // print(driverArr)
-    }
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-extension HomeVC{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
 
@@ -195,18 +180,12 @@ extension HomeVC{
         self.view.insertSubview(OrderView, aboveSubview: self.googleMapsView)
         self.view.insertSubview(orderFinalsend, aboveSubview: self.googleMapsView)
         /////add my location marker
-        searchResultController = SearchResultsController()
-        searchResultController.delegate = self
+        //searchResultController = SearchResultsController()
+       // searchResultController.delegate = self
         gmsFetcher = GMSAutocompleteFetcher()
         gmsFetcher.delegate = self
         
     }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-       // print(error)
-    }
-    
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = manager.location!.coordinate
         self.locationmarker.position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
@@ -217,9 +196,7 @@ extension HomeVC{
         self.locationmarker.map = self.googleMapsView
         let camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 14)
         self.googleMapsView.camera = camera
-        
         locationmanager.stopUpdatingLocation()
-        
     }
     
     /**
@@ -244,7 +221,7 @@ extension HomeVC{
                 self.resultsArray.append(prediction.attributedFullText.string)
             }
         }
-        self.searchResultController.reloadDataWithArray(self.resultsArray)
+       // self.searchResultController.reloadDataWithArray(self.resultsArray)
         //print(resultsArray)
     }
 
@@ -272,164 +249,42 @@ extension HomeVC{
         }
         
     }
-    
-    //////slide menu
-    @IBAction func NavigationButton(_ sender: UIBarButtonItem) {
-        if isnaveopen {
-            isnaveopen =  false
-            self.menuButton.setFAIcon(icon: .FAClose, iconSize: 35)
-            NavView.layer.shadowColor = UIColor.black.cgColor
-            NavView.layer.shadowOpacity = 0.5
-            NavView.layer.shadowOffset = CGSize(width: 25, height: 0)
-            NavmenuLeading.constant = 0
-        }else{
-            NavmenuLeading.constant = -300
-            self.menuButton.setFAIcon(icon: .FANavicon, iconSize: 35)
-            isnaveopen =  true
-        }
-        UIView.animate(withDuration: 0.3, animations: {
-            self.view.layoutIfNeeded()
-        })
-    }
-    
-    @IBAction func gesturerec(_ sender: UIPanGestureRecognizer) {
-        
-        if sender.state == .began || sender.state == .changed{
-            let translation = sender.translation(in: self.view).x
-            
-            if translation > 0 {
-                //swipe right
-                if NavmenuLeading.constant < 20{
-                    self.menuButton.setFAIcon(icon: .FAClose, iconSize: 35)
-                    isnaveopen =  false
-                    
-                    UIView.animate(withDuration: 0.2, animations: {
-                        self.NavmenuLeading.constant += translation/10
-                        self.view.layoutIfNeeded()
-                        
-                    })
-                    
-                }
-                
-            }else{
-                ////swipe left
-                
-                if NavmenuLeading.constant > -300{
-                    self.menuButton.setFAIcon(icon: .FANavicon, iconSize: 35)
-                    isnaveopen =  true
-                    
-                    UIView.animate(withDuration: 0.2, animations: {
-                        self.NavmenuLeading.constant += translation/10
-                        self.view.layoutIfNeeded()
-                        
-                    })
-                    
-                }
-                
-                
-            }
-            
-        }else if sender.state == .ended {
-            if NavmenuLeading.constant < -300{
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.NavmenuLeading.constant = -300
-                    self.view.layoutIfNeeded()
-                    
-                })
-            }else{
-                
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.NavmenuLeading.constant = 0
-                    self.view.layoutIfNeeded()
-                    
-                })
-                
-            }
-        }
-    }
-    
-    
-    @IBAction func MuteAction(_ sender: UISwitch) {
-        if MuteSwich.isOn {
-            
-            
-            print("on")
-        }else{
-            print("off")
-            
-        }
-    }
-    
-    @IBAction func Profile(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "ProfileSegue", sender: self)
-    }
-    
-    @IBAction func registDriver(_ sender: UIButton) {
-        if  Helper.isDriver() == false{
-            self.performSegue(withIdentifier: "DriverSegue", sender: self)
-        }
-        
-    }
-    
-    @IBAction func LogOut(_ sender: UIButton) {
-        Helper.logout()
-    }
-    //    var urlstr = ""
-    // var titlestr = ""
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "DriverSegue" {
-            let destinationVC = segue.destination as! WebViewVC
-            destinationVC.urlstr = Config.main
-            destinationVC.titlestr = NSLocalizedString("Driver Registeration", comment: " driver registration")
-        }
-        
-        
-    }
-    
     /**
      Searchbar when text change
      
      - parameter searchBar:  searchbar UI
      - parameter searchText: searchtext description
      */
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if resultsArray.count > 0{
-            resultsArray.removeAll()
-        }
-        gmsFetcher?.sourceTextHasChanged(searchText)
-    }
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if resultsArray.count > 0{
+//            resultsArray.removeAll()
+//        }
+//        gmsFetcher?.sourceTextHasChanged(searchText)
+//        
+//    }
     
     /**
      action for search location by address
      
      - parameter sender: button search location
      */
+   // @IBAction func searchWithAddress(_ sender: AnyObject) {
+//        let searchController = UISearchController(searchResultsController: searchResultController)
+//        searchController.searchBar.delegate = self
+//        self.present(searchController, animated:true, completion: nil)
+   // }
     
-    @IBAction func searchWithAddress(_ sender: AnyObject) {
-        
-        
-        let searchController = UISearchController(searchResultsController: searchResultController)
-        searchController.searchBar.delegate = self
-        self.present(searchController, animated:true, completion: nil)
-    }
-    
-    @IBAction func Cancelorder(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.OrderButtomConstrain.constant = 200
-            self.view.layoutIfNeeded()
-            
-        })
-    }
-    ///
+
     func drawPath(startLocation: CLLocation, endLocation: CLLocation)
     {
         let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
         let destination = "\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)"
-        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving"
+        //let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving"
+        
+         let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&sensor=true&mode=driving&key=AIzaSyArjmbYWTWZhDFFtPOLRLKYwjtBDkOEGrY")!
         Alamofire.request(url).responseJSON { response in
             let json = try? JSON(data: response.data!)
+            print(json as Any)
             //let routes = json!["routes"].arrayValue
             self.routes = json!["routes"].arrayValue
             // print route using Polyline
@@ -457,6 +312,17 @@ extension HomeVC{
 }
 
 
+extension UIView {
+    func applyNavBarConstraints(size: (width: CGFloat, height: CGFloat)) {
+        let widthConstraint = self.widthAnchor.constraint(equalToConstant: size.width)
+        let heightConstraint = self.heightAnchor.constraint(equalToConstant: size.height)
+        heightConstraint.isActive = true
+        widthConstraint.isActive = true
+    }
+}
+
+// Usage
+//button.applyNavBarConstraints(size: (width: 33, height: 33))
 
 
 

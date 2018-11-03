@@ -4,11 +4,13 @@ class Helper: NSObject {
         guard let window = UIApplication.shared.keyWindow else{return}
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc:UIViewController
-        if getUserData() {
-            vc = storyboard.instantiateViewController(withIdentifier: "Home")
-        }else{
-            vc = (storyboard.instantiateInitialViewController())!
-        }
+      
+            if getUserData() || isguest() == true{
+                vc = storyboard.instantiateViewController(withIdentifier: "Home")
+            }else{
+                vc = (storyboard.instantiateInitialViewController())!
+            }
+      
         window.rootViewController = vc
         UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
     }
@@ -27,6 +29,22 @@ class Helper: NSObject {
         def.synchronize()
         restartApp()
     }
+    class func setDevicesToken(token:String){
+        let def = UserDefaults.standard
+        def.setValue(token, forKey: "token")
+
+    }
+   class func  remove_pref(remove_key : String){
+        UserDefaults.standard.removeObject(forKey: remove_key)
+        UserDefaults.standard.synchronize()
+    }
+
+    class func getdevicestoken()->String{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "token") as? String)!
+    }
+    
+    
     class func getUserType()->String{
         let def = UserDefaults.standard
         return (def.object(forKey: "user_type") as? String)!
@@ -73,7 +91,12 @@ class Helper: NSObject {
     class func logout(){
         let def = UserDefaults.standard
         def.removeObject(forKey: "user_email")
+        def.removeObject(forKey: "guest")
         restartApp()
 
+    }
+    class func isguest( )->Bool{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "guest") != nil)
     }
 }

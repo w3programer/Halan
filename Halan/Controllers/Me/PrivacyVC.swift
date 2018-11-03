@@ -19,7 +19,7 @@ class PrivacyVC: UIViewController {
             case.success(let value):
                 let json = JSON(value)
                 self.TitleHead.text = json["title"].object as? String
-                self.ContentBody.text = json["content"].object as! String
+                self.ContentBody.text = json["content"].object as? String
             }
     }
   }

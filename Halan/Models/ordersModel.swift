@@ -33,7 +33,7 @@ class ordersModel: NSObject {
     var client_location :String = ""
     var room_id :String = ""
     init?(dic:[String:JSON]) {
-        guard let order_id = dic["order_id"]?.string ,let clientname = dic["client_name"]?.string ,let phone = dic["client_phone"]?.string  else {
+        guard let order_id = dic["order_id"]?.string ,let clientname = dic["client_name"]?.string ,let phone = dic["client_phone"]?.string ,let roomid = dic["room_id"]?.string else {
             return nil
         }
         self.driver_name = (dic["driver_name"]?.string)!
@@ -53,7 +53,6 @@ class ordersModel: NSObject {
         self.client_phone = phone
         self.client_email = (dic["client_email"]?.string)!
         self.client_photo = (dic["client_photo"]?.toImagePath)!
-
         self.client_location = (dic["client_location"]?.string)!
         self.client_google_lang = (dic["client_google_lang"]?.double)!
         self.client_google_lat = (dic["client_google_lat"]?.double)!
@@ -67,7 +66,7 @@ class ordersModel: NSObject {
         self.order_start_time = (dic["order_start_time"]?.string)!
         self.order_start_from_minute = (dic["order_start_from_minute"]?.string)!
         self.cost = (dic["cost"]?.string)!
-        self.room_id = (dic["room_id"]?.string)!
+        self.room_id = roomid
 
         
     }

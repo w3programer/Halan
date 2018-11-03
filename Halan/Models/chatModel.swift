@@ -1,8 +1,6 @@
 import UIKit
 import SwiftyJSON
 class chatModel: NSObject {
-    
-    
     var id_message :String = ""
     var room_id_fk :String = ""
     var message_type :String = ""
@@ -19,7 +17,7 @@ class chatModel: NSObject {
     var message_date :String = ""
     var message_time :String = ""
     init?(dic:[String:JSON]) {
-        guard let message = dic["message"]?.string   else {
+        guard let message = dic["message"]?.string ,let imagebill = dic["image"]?.toImagePath  else {
             return nil
         }
         self.message = message
@@ -35,12 +33,7 @@ class chatModel: NSObject {
         self.to_photo  = (dic["to_photo"]?.toImagePath)!
         self.message_date  = (dic["message_date"]?.string)!
         self.message_time  = (dic["message_time"]?.string)!
-        if dic["user_photo"] != nil{
-            self.image = (dic["user_photo"]?.toImagePath)!
-
-        }else{
-           self.image  = ""
-        }
+        self.image = imagebill
 
     }
     

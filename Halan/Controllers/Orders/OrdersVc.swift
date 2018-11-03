@@ -5,12 +5,13 @@ class OrdersVc: UIViewController {
     var orders = [ordersModel]()
     var orderStatue = "1"
     let tabsArray = [NSLocalizedString("Current", comment: "Current"), NSLocalizedString("Previous", comment: "Previous"),NSLocalizedString("Canceled", comment: "Canceled") ]
-    override func viewDidLoad()
-    {
+    override func viewDidLoad(){
         super.viewDidLoad()
         customCollectionView.isScrollEnabled = false
-        customCollectionView.reloadData()
-        self.getData()
+        if Helper.isguest() == false{
+            customCollectionView.reloadData()
+            self.getData()
+        }
     }
     func getData() {
         var urlstr = ""
@@ -57,16 +58,21 @@ extension OrdersVc : UICollectionViewDataSource, UICollectionViewDelegate
         
         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
 
-        if indexPath.row == 0 {
-            self.orderStatue = "1"
-            self.getData()
-        }else if indexPath.row == 1{
-            self.orderStatue = "4"
-        self.getData()
-        }else if indexPath.row == 2{
-            self.orderStatue = "2"
-            self.getData()
+        if Helper.isguest() == false{
+            
+            if indexPath.row == 0 {
+                self.orderStatue = "1"
+                self.getData()
+            }else if indexPath.row == 1{
+                self.orderStatue = "4"
+                self.getData()
+            }else if indexPath.row == 2{
+                self.orderStatue = "2"
+                self.getData()
+            }
+            
         }
+
         //print("\(self.tabsArray[indexPath.row]) Pressed")
     }
 }

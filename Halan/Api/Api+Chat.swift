@@ -27,5 +27,50 @@ extension Api{
             
         }
     }
-}
+    
+    class func sendmessage(roomid:String,
+        from_id:Int , to_id:String,message_type:String  ,message:String,image:[String],completion:@escaping(_ error :Error? ,_ success :Bool)->Void){
+        let BaseUrl = Config.sendMessage+roomid
+        let parameters = [
+            "from_id":from_id,
+            "to_id":to_id,
+            "message":message,
+            "message_type": message_type,
+            "image":image,
+            ] as [String : Any]
+/////////////////////////////////////////
+            Alamofire.request(BaseUrl, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil)
+                .validate(statusCode:200..<300)
+                .responseJSON { response in
+                    switch response.result
+                    {
+                    case .failure( let error):
+                        print(error)
+                        completion(error , false)
+                    case .success(let value):
+                        let data = JSON(value)
+                        if  (data["success"].int == 1) {
+                            completion(nil ,true)
+                        }
+                    }
+                    
+            }
+            
+  
+
+            
+            
+            
+        }
+
+        
+        
+        
+///////////////
+        
+        
+        
+    }
+    
+
 

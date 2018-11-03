@@ -11,13 +11,12 @@ class NotifactionsVC: UIViewController,UITableViewDataSource, UITableViewDelegat
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         NotifactionTable.tableFooterView = UIView()
-        NotifactionTable.addSubview(refresher)
-       self.handlerefresh()
+        if Helper.isguest() == false{
+            NotifactionTable.addSubview(refresher)
+            self.handlerefresh()
 
-
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

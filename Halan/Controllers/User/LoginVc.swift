@@ -5,7 +5,7 @@ class LoginVC: UIViewController {
     @IBOutlet var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-     //AppDelegate.requestReview()
+        //AppDelegate.requestReview()
         username.setLeftViewFAIcon(icon: .FAUserO, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
         password.setLeftViewFAIcon(icon: .FALock, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
 
@@ -31,26 +31,25 @@ class LoginVC: UIViewController {
                 let message:String = NSLocalizedString("failed", comment: "")
                 let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "ok", style: .destructive, handler: nil))
-                self.present(alert,animated: true)
-                
+                self.present(alert,animated: true)   
             }
         }
-
-        
     }
-    
-    
     @IBAction func Registration(_ sender: Any) {
 
    self.performSegue(withIdentifier: "RegistrationSegue", sender: self)
     }
+    
     @IBAction func reseetpassword(_ sender: Any) {
-        
         self.performSegue(withIdentifier: "ForgetSegue", sender: self)
     }
     @IBAction func skip(_ sender: Any) {
-    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeView") as? HomeVC
-       self.navigationController?.pushViewController(vc!, animated: true)
+        
+        let def = UserDefaults.standard
+        def.setValue(true, forKey: "guest")
+       Helper.restartApp()
+//    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "Home") as? HomeVC
+//       self.navigationController?.pushViewController(vc!, animated: true)
        // self.present(vc!,animated: true, completion: nil)
     }
     
