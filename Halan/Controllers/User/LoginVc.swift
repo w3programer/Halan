@@ -6,6 +6,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //AppDelegate.requestReview()
+       
         username.setLeftViewFAIcon(icon: .FAUserO, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
         password.setLeftViewFAIcon(icon: .FALock, leftViewMode: .always, textColor: .green, backgroundColor: .clear, size: nil)
 

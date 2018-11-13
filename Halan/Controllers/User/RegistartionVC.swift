@@ -53,8 +53,7 @@ class RegistartionVC: UIViewController,UIImagePickerControllerDelegate,UINavigat
         if !(gender.text?.isEmpty)!{
             Gender = gender.text!
         }
-        
-        Api.registration(username:username ,password:Password ,email:Email,phone:phone,fullname:name,age:age,gender:Gender,photo:UserImage.image!.encodeimage(format: ImageFormat.JPEG(0)),token:Helper.getdevicestoken(), completion: { (error:Error?, success :Bool) in
+        Api.registration(username:username ,password:Password ,email:Email,phone:phone,fullname:name,age:age,gender:Gender,photo:UserImage.image!.encodeimage(format: ImageFormat.JPEG(0)),token:"", completion: { (error:Error?, success :Bool) in
             
             
             if success {

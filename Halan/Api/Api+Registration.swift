@@ -4,14 +4,7 @@ import Alamofire
 import  SwiftyJSON
 class Api: NSObject {    
     class func registration(
-        
-        
-        
-        
-        
-        
-        
-        username:String ,password:String ,email:String,phone:String,fullname:String,age:String,gender:String,photo:String,token:String,completion:@escaping(_ error :Error? ,_ success :Bool)->Void){
+ username:String ,password:String ,email:String,phone:String,fullname:String,age:String,gender:String,photo:String,token:String,completion:@escaping(_ error :Error? ,_ success :Bool)->Void){
         let BaseUrl = Config.registration
         let parameters = [
             "user_name":username,
@@ -35,8 +28,7 @@ class Api: NSObject {
                 case .success(let value):
                     let data = JSON(value)
                     //print(data)
-                    if  (data["success"].int == 1) {
-                        
+                    if  (data["success"].int == 1) {  
                         ///////
                         let user_id = Int(data["user_id"].string!)!
                         let user_name = data["user_name"].string

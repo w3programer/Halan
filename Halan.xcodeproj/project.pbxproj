@@ -55,7 +55,6 @@
 		54C2F5FE20CD555C00815F36 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2F5FD20CD555C00815F36 /* HomeVC.swift */; };
 		54C2F60020CD6EAD00815F36 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2F5FF20CD6EAC00815F36 /* SearchResultsController.swift */; };
 		54D3042D20C5839300C9B622 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D3042C20C5839300C9B622 /* AudioToolbox.framework */; };
-		54DEAB1C21766C0800DB0A05 /* homeExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DEAB1B21766C0800DB0A05 /* homeExtention.swift */; };
 		54E772EA20E11CBE00E7E8A6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E772E920E11CBE00E7E8A6 /* Profile.swift */; };
 		54E772EC20E126E200E7E8A6 /* Api+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E772EB20E126E200E7E8A6 /* Api+Profile.swift */; };
 		54E772EE20E1270B00E7E8A6 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E772ED20E1270B00E7E8A6 /* ProfileData.swift */; };
@@ -137,7 +136,6 @@
 		54C2F5FD20CD555C00815F36 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		54C2F5FF20CD6EAC00815F36 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		54D3042C20C5839300C9B622 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		54DEAB1B21766C0800DB0A05 /* homeExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeExtention.swift; sourceTree = "<group>"; };
 		54E772E920E11CBE00E7E8A6 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		54E772EB20E126E200E7E8A6 /* Api+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Profile.swift"; sourceTree = "<group>"; };
 		54E772ED20E1270B00E7E8A6 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
@@ -289,7 +287,6 @@
 			children = (
 				54C2F5FF20CD6EAC00815F36 /* SearchResultsController.swift */,
 				54C2F5FD20CD555C00815F36 /* HomeVC.swift */,
-				54DEAB1B21766C0800DB0A05 /* homeExtention.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -597,7 +594,6 @@
 				54F4DEA921011B480046BDF2 /* ChatVc.swift in Sources */,
 				54A1C77A20D68EE7004011A3 /* actionCheet+extention.swift in Sources */,
 				5406DADD20F628820065E5F7 /* CurentOrder.swift in Sources */,
-				54DEAB1C21766C0800DB0A05 /* homeExtention.swift in Sources */,
 				54FF731E20F35F3D00FD5747 /* OrdersVc.swift in Sources */,
 				54BC2FD220CAC89900B495D5 /* Bool+Extension.swift in Sources */,
 				54095A8220EFCFC600C83A72 /* NotifactionsVC.swift in Sources */,
